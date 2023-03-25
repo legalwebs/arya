@@ -1,0 +1,2030 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+<script type="text/javascript">
+var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,initializeOnLoaded:function(o){gform.domLoaded&&gform.scriptsLoaded?o():!gform.domLoaded&&gform.scriptsLoaded?window.addEventListener("DOMContentLoaded",o):document.addEventListener("gform_main_scripts_loaded",o)},hooks:{action:{},filter:{}},addAction:function(o,n,r,t){gform.addHook("action",o,n,r,t)},addFilter:function(o,n,r,t){gform.addHook("filter",o,n,r,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,n){gform.removeHook("action",o,n)},removeFilter:function(o,n,r){gform.removeHook("filter",o,n,r)},addHook:function(o,n,r,t,i){null==gform.hooks[o][n]&&(gform.hooks[o][n]=[]);var e=gform.hooks[o][n];null==i&&(i=n+"_"+e.length),gform.hooks[o][n].push({tag:i,callable:r,priority:t=null==t?10:t})},doHook:function(n,o,r){var t;if(r=Array.prototype.slice.call(r,1),null!=gform.hooks[n][o]&&((o=gform.hooks[n][o]).sort(function(o,n){return o.priority-n.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==n?t.apply(null,r):r[0]=t.apply(null,r)})),"filter"==n)return r[0]},removeHook:function(o,n,t,i){var r;null!=gform.hooks[o][n]&&(r=(r=gform.hooks[o][n]).filter(function(o,n,r){return!!(null!=i&&i!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][n]=r)}});
+</script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=2" />
+	<meta name="format-detection" content="telephone=no">
+	<link rel="pingback" href="http://apollo2.local/xmlrpc.php">
+	<link rel="icon" href="../wp-content/uploads/2022/01/favicon-apollo.png" sizes="any" type="image/png">
+
+	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Preconnecting Assets -->
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	
+	<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Merriweather:ital,wght@0,300;0,400;0,700&family=Karla:ital,wght@0,400;0,700&display=swap" rel="stylesheet"> 
+<style>
+	:root {
+		--main-font: 'Barlow Semi Condensed';
+		--secondary-font: 'Merriweather';
+		--third-font: 'Karla';
+		--additional-font: '';
+		/* --banner-btn-1-bg:
+					;
+		--banner-btn-1-color:
+					;
+		--banner-btn-1-border-color:
+					;
+		--banner-btn-1-border-width:
+			px		;
+		--banner-btn-2-bg:
+					;
+		--banner-btn-2-color:
+					;
+		--banner-btn-2-border-color:
+					;
+		--banner-btn-2-border-width:
+			px		; */
+		--accent-color : hsl(14deg,46%,46%);
+		--accent-color-h : 14deg;
+		--accent-color-s : 46%;
+		--accent-color-l : 46%;
+		--text-color: #242424;
+		--link-color: #ad5a40;
+		--link-hover-color: #c3755d;
+		--color-primary: #313236;
+		--color-secondary: #eeeeee;
+		--color-tertiary: #e0d4bf;
+		--color-neutral: #1F4698;
+		--footer-heading-color: #242424;
+		--footer-subheading-color: ;
+		--subheading-color: var(--accent-color);
+		--results-heading-color: #242424;
+		--results-subheading-color: var(--accent-color);
+		--res_lg_bg_image: url();
+		--res_sm_bg_image: url();
+		--res-br-color: #FFFFFF;
+		--res-bg-repeat: ;
+		--res-bg-size: auto;
+		--results-amount-color: #ad5a40;
+		--results-category-color: #242424;
+		--top-bar-bg: #313236; 
+		--contact-footer-bg-img: url(../wp-content/uploads/2022/01/bg-footer.png);
+		--contact-footer-bg-color: #212838;
+		--contact-bg-repeat: no-repeat;
+		--contact-bg-size: cover;
+		--header-bg-color: #FFFFFF;
+		--header-main-m-color: #45201a;
+		--header-main-m-hover-color: #ad5a40;
+		--header-main-m-active-color: #ad5a40;
+		--header-main-m-current-color: #ad5a40;
+		--header-main-m-format: uppercase;
+		--header-sub-m-bg: #FFFFFF;
+		--header-sub-link: #45201a;
+		--header-sub-link-hover: #ad5a40;
+		--header-sub-link-active: #ad5a40;
+		--header-menu-font-weight: 700;
+		--header-menu-font-size: 16px;
+		--footer-menu-font-weight:400 ;
+		--footer-menu-font-size: 16px;
+		--mobile-m-overlay: #2d2b2b;
+		--mobile-menu-color: #FFFFFF;
+		--background-menu-color: #313236;
+		--mobile-active-menu-color: #ad5a40;
+		--mobile-menu-format: uppercase;
+		--location-footer-tab-fg-color:'';
+		--location-footer-tab-bg-color:'';
+
+		/* Hero mobile */
+		--hero-mobile-padding-top: 74px; 
+
+		/** 
+		*	Form
+		 */
+		--form-title-color: #FFFFFF;
+		--form-label-color: #242424;
+		--form-button-background: #ad5a40;
+		--form-button-hover: #c3755d;
+
+		/**
+		 * Testimonials
+		 */
+		--testimonials-bg-color: #FFFFFF;
+		--testimonials-quote-color: #000000;
+		--testimonials-author-color: #000000;
+
+		/** Footer */
+		--footer-phone-mobile: 43px;
+		--footer-phone-tablet: 38px;
+		--footer-phone-desktop: 38px;
+
+		/**
+		* CTA
+		*/
+		--cta-widget-phone-fs: 70px;
+
+		/* Practice Area */
+		--pa-font-size: 24px;
+		--pa-mobile-font-size: 24px;
+
+		/* About us intro cta phone number desktop */
+		--about-intro-phone-desktop : 45px;
+
+	}
+</style>
+
+	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v20.2 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Community Archive - apollo.consultwebs.com</title>
+	<link rel="canonical" href="index.html" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Community Archive - apollo.consultwebs.com" />
+	<meta property="og:url" content="http://apollo2.local/community/" />
+	<meta property="og:site_name" content="apollo.consultwebs.com" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"http://apollo2.local/community/","url":"http://apollo2.local/community/","name":"Community Archive - apollo.consultwebs.com","isPartOf":{"@id":"http://apollo2.local/#website"},"primaryImageOfPage":{"@id":"http://apollo2.local/community/#primaryimage"},"image":{"@id":"http://apollo2.local/community/#primaryimage"},"thumbnailUrl":"http://apollo2.local/wp-content/uploads/2022/01/community-post-img5.jpg","breadcrumb":{"@id":"http://apollo2.local/community/#breadcrumb"},"inLanguage":"en-US"},{"@type":"ImageObject","inLanguage":"en-US","@id":"http://apollo2.local/community/#primaryimage","url":"http://apollo2.local/wp-content/uploads/2022/01/community-post-img5.jpg","contentUrl":"http://apollo2.local/wp-content/uploads/2022/01/community-post-img5.jpg","width":285,"height":258},{"@type":"BreadcrumbList","@id":"http://apollo2.local/community/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"http://apollo2.local/"},{"@type":"ListItem","position":2,"name":"Community"}]},{"@type":"WebSite","@id":"http://apollo2.local/#website","url":"http://apollo2.local/","name":"apollo.consultwebs.com","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"http://apollo2.local/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='http://analytics.consultwebs.com/' />
+<link rel="alternate" type="application/rss+xml" title="apollo.consultwebs.com &raquo; Community Feed" href="feed/index.html" />
+<link rel='stylesheet' id='classic-theme-styles-css' href='../wp-includes/css/classic-themes.min.css%3Fver=1.css' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('index.html');--wp--preset--duotone--grayscale: url('index.html');--wp--preset--duotone--purple-yellow: url('index.html');--wp--preset--duotone--blue-red: url('index.html');--wp--preset--duotone--midnight: url('index.html');--wp--preset--duotone--magenta-yellow: url('index.html');--wp--preset--duotone--purple-green: url('index.html');--wp--preset--duotone--blue-orange: url('index.html');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='cw_video-css' href='../wp-content/plugins/cwdevelopers-cw_video_plugin-f5a8bdfb7bd7/cw-video.css%3Fver=2020.11.03.css' type='text/css' media='all' />
+<link rel='stylesheet' id='parent-style-css' href='../wp-content/themes/horizon-core/style.css%3Fver=1.0.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='child-style-css' href='../wp-content/themes/horizon-apollo/style.css%3Fver=1.0.0.css' type='text/css' media='all' />
+<link rel='stylesheet' id='horizon-critical-css' href='../wp-content/themes/horizon-apollo/dist/css/critical.css%3Fver=1677171188.css' type='text/css' media='all' />
+<link rel='stylesheet' id='horizon-vendors-css' href='../wp-content/themes/horizon-apollo/dist/css/vendors.css%3Fver=1677171188.css' type='text/css' media='all' />
+<link rel='stylesheet' id='horizon-content-css' href='../wp-content/themes/horizon-apollo/dist/css/content.css%3Fver=1677748642.css' type='text/css' media='all' />
+<link rel='stylesheet' id='horizon-elements-css' href='../wp-content/themes/horizon-apollo/dist/css/elements.css%3Fver=1677171217.css' type='text/css' media='all' />
+<link rel='stylesheet' id='horizon-print-css' href='../wp-content/themes/horizon-apollo/dist/css/print.css%3Fver=1677171188.css' type='text/css' media='all' />
+<link rel='stylesheet' id='horizon-common-css' href='../wp-content/themes/horizon-apollo/dist/css/theme.css%3Fver=1677171188.css' type='text/css' media='all' />
+<link rel='stylesheet' id='horizon-community-css-css' href='../wp-content/themes/horizon-apollo/dist/css/community.css%3Fver=1677171188.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cw-toc-display-css-css' href='../wp-content/plugins/cw-table-of-contents/includes/css/style.min.css%3Fver=1.1.css' type='text/css' media='all' />
+<script type='text/javascript' src='../wp-includes/js/jquery/jquery.min.js%3Fver=3.6.1' id='jquery-core-js'></script>
+<script type='text/javascript' src='../wp-includes/js/jquery/jquery-migrate.min.js%3Fver=3.3.2' id='jquery-migrate-js'></script>
+<link rel="https://api.w.org/" href="../wp-json/index.html" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc.php%3Frsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="../wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 6.1.1" />
+
+<style>
+	.legally-reviewed-box{
+		--cw-lrbb-border: 6px solid #eee;
+		--cw-lrbb-shadow: none;
+		--cw-lrbb-bkg-color: #ffffff;		
+		--cw-lrbb-padding-top: 35px;
+		--cw-lrbb-padding-right: 15px;
+		--cw-lrbb-padding-bottom: 35px;
+		--cw-lrbb-padding-left: 15px;
+		--cw-lrbb-title-color: #323232;
+		--cw-lrbb-title-font-size: 30px;
+		--cw-lrbb-title-font-weight: 400;
+		--cw-lrbb-title-margin-bottom: 17px;
+		--cw-lrbb-attorney-title-color: #242424;
+		--cw-lrbb-attorney-title-font-size: 24px;
+		--cw-lrbb-attorney-title-font-weight: 400;
+		--cw-lrbb-attorney-title-margin-bottom: 10px;
+		--cw-lrbb-content-color: #242424;
+		--cw-lrbb-content-font-size: 18px;
+		--cw-lrbb-content-font-weight: 400;
+		--cw-lrbb-content-line-height: 31px;
+		--cw-lrbb-content-margin-bottom: 20px;
+		--cw-lrbb-thumbnail-width: 130px;
+		--cw-lrbb-thumbnail-height: 130px;
+		--cw-lrbb-thumbnail-border-radius: 50%;
+		--cw-lrbb-thumbnail-margin-bottom: 20px;
+	}
+
+	.author-box {
+		--cw-ab-margin-top: 42px;
+		--cw-ab-title-font-size: 35px;
+		--cw-ab-title-color: #212529;
+		--cw-ab-title-link-color: #ad5a40;
+		--cw-ab-description-padding-top: 25px;
+		--cw-ab-description-padding-bottom: 25px;
+		--cw-ab-description-padding-left: 25px;
+		--cw-ab-description-padding-right: 25px;
+		--cw-ab-description-content-margin-left: 100px;
+		--cw-ab-description-content-color: #242424;
+		--cw-ab-description-content-font-size: 18px;
+		--cw-ab-description-content-line-height: 31px;
+		--cw-ab-thumbnail-width: 100px;
+		--cw-ab-thumbnail-height: 130px;
+		--cw-ab-thumbnail-border-radius: 0%;
+		--cw-ab-thumbnail-margin-bottom: 0px;
+	}
+</style>
+	
+<style>
+	.cw-accordion{
+		--cw-accordion-tab-padding-top: 20px;
+		--cw-accordion-tab-padding-right: 50px;
+		--cw-accordion-tab-padding-bottom: 20px;
+		--cw-accordion-tab-padding-left: 20px;
+		--cw-accordion-tab-mob-fs: 16px;
+		--cw-accordion-tab-des-fs: 15px;
+		--cw-accordion-tab-bg: #313236;
+		--cw-accordion-tab-color: #ffffff;
+		--cw-accordion-active-tab-bg: #ad5a40;
+		--cw-accordion-active-tab-color: #FFFFFF;
+		--cw-accordion-hover-tab-bg: #ad5a40;
+		--cw-accordion-hover-tab-color: #ffffff;
+		--cw-accordion-arrow-up: url(../wp-content/plugins/cw-faqs/public/images/arrow-up.svg);
+		--cw-accordion-arrow-down: url(../wp-content/plugins/cw-faqs/public/images/arrow-down.svg);
+		--cw-accordion-panel-bg: #FFFFFF;
+		--cw-accordion-panel-border-color: #ad5a40;
+		--cw-accordion-panel-padding-top: 30px;
+		--cw-accordion-panel-padding-right: 30px;
+		--cw-accordion-panel-padding-bottom: 30px;
+		--cw-accordion-panel-padding-left: 30px;
+		--cw-accordion-panel-text-color: #242424;
+		--cw-accordion-panel-mob-fs: 16px;
+		--cw-accordion-panel-des-fs: 16px;
+
+	}
+</style>
+	
+	
+	<!-- Google Tag Manager -->
+
+</head>
+
+<body id="top-page" class="archive post-type-archive post-type-archive-community page-suspendisse-consectetur-erat-sed-purus-luctus-urna-lacinia-2 post-id-1349">
+
+<!-- Color Switcher Box -->	
+<div id="SwitcherControl" class="ColorSwitcher">
+  <button class="ColorSwitcher__control" onclick="openColor()"></button>
+    <div class="ColorSwitcher__switchs">
+
+      <div id="panel">
+      <ul>
+        <li>
+          <a class="ColorSwitcher__switch color-1" href="index.html#" data-showName="color-1"></a>
+        </li>      
+        <li>
+          <a class="ColorSwitcher__switch color-2" href="index.html#" data-showName="color-2"></a>
+        </li>
+        <li>
+          <a class="ColorSwitcher__switch color-3" href="index.html#" data-showName="color-3"></a>
+        </li>
+        <li>
+          <a class="ColorSwitcher__switch color-4" href="index.html#" data-showName="color-4"></a>
+        </li>
+        <li>
+          <a class="ColorSwitcher__switch color-5" href="index.html#" data-showName="color-5"></a>
+        </li>
+        <li>
+          <a class="ColorSwitcher__switch color-6" href="index.html#" data-showName="color-6"></a>
+        </li>
+      </ul>
+    </div>
+    
+    <a onclick="window.localStorage.clear(); window.location.reload(true);" class="reset">reset</a>
+    
+    </div>
+</div>
+
+<style>
+/* Color Switcher */
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --color_1: #003c91;  
+  --color_2: #3abd19;
+  --color_3: #9519bd;
+  --color_4: #db0606;
+  --color_5: #ff8400;
+  --color_6: #ffc800;  
+}
+
+/* Box Color */
+.ColorSwitcher,
+.ColorSwitcher * {
+    box-sizing: border-box;
+}
+
+.ColorSwitcher {
+    position: fixed;
+    top: 50%;
+    left: -162px;
+    width: 162px;
+    padding: 20px 10px;
+    background: #fff;
+    border-radius: 0 3px 3px 0;
+    box-shadow: 0 0 15px rgba(0,0,0,.15);
+    -webkit-transform: translateY(-80%);
+            transform: translateY(-80%);
+    -webkit-transition: left .2s;
+    transition: left .2s;
+    z-index: 999999;    
+}
+
+.ColorSwitcher--open {
+    left: 0;
+    width: 145px;
+}
+
+.ColorSwitcher__control {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+}
+.ColorSwitcher__switch {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+}
+.ColorSwitcher__switch.color-1 {
+    background: var(--color_1);
+}
+.ColorSwitcher__switch.color-2 {
+    background: var(--color_2);
+}
+.ColorSwitcher__switch.color-3 {
+    background: var(--color_3);
+}
+.ColorSwitcher__switch.color-4 {
+    background: var(--color_4);
+}
+.ColorSwitcher__switch.color-5 {
+    background: var(--color_5);
+}
+.ColorSwitcher__switch.color-6 {
+    background: var(--color_6);
+}
+.ColorSwitcher__control:focus,
+.ColorSwitcher__switch:focus {
+    outline: 0;
+}
+.ColorSwitcher__switchs .reset {
+    background: #515151;
+    color: #fff;
+    border-radius: 14px;
+    padding: 2px 8px;
+    text-transform: capitalize;
+    font-size: 14px;
+    margin-left: 5px;
+}
+.ColorSwitcher__switchs .reset:hover {
+    background: #7b7979;
+}
+.ColorSwitcher__control {
+    position: absolute;
+    right: 0;
+    left: 100%;
+    border-radius: 0 3px 3px 0;
+    box-shadow: 5px 0 7px rgba(0,0,0,.15);
+    color: #fff;
+    background: #515151;    
+}
+
+.ColorSwitcher__control:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ3OC43MDMgNDc4LjcwMyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDc4LjcwMyA0NzguNzAzOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCI+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTQ1NC4yLDE4OS4xMDFsLTMzLjYtNS43Yy0zLjUtMTEuMy04LTIyLjItMTMuNS0zMi42bDE5LjgtMjcuN2M4LjQtMTEuOCw3LjEtMjcuOS0zLjItMzguMWwtMjkuOC0yOS44ICAgIGMtNS42LTUuNi0xMy04LjctMjAuOS04LjdjLTYuMiwwLTEyLjEsMS45LTE3LjEsNS41bC0yNy44LDE5LjhjLTEwLjgtNS43LTIyLjEtMTAuNC0zMy44LTEzLjlsLTUuNi0zMy4yICAgIGMtMi40LTE0LjMtMTQuNy0yNC43LTI5LjItMjQuN2gtNDIuMWMtMTQuNSwwLTI2LjgsMTAuNC0yOS4yLDI0LjdsLTUuOCwzNGMtMTEuMiwzLjUtMjIuMSw4LjEtMzIuNSwxMy43bC0yNy41LTE5LjggICAgYy01LTMuNi0xMS01LjUtMTcuMi01LjVjLTcuOSwwLTE1LjQsMy4xLTIwLjksOC43bC0yOS45LDI5LjhjLTEwLjIsMTAuMi0xMS42LDI2LjMtMy4yLDM4LjFsMjAsMjguMSAgICBjLTUuNSwxMC41LTkuOSwyMS40LTEzLjMsMzIuN2wtMzMuMiw1LjZjLTE0LjMsMi40LTI0LjcsMTQuNy0yNC43LDI5LjJ2NDIuMWMwLDE0LjUsMTAuNCwyNi44LDI0LjcsMjkuMmwzNCw1LjggICAgYzMuNSwxMS4yLDguMSwyMi4xLDEzLjcsMzIuNWwtMTkuNywyNy40Yy04LjQsMTEuOC03LjEsMjcuOSwzLjIsMzguMWwyOS44LDI5LjhjNS42LDUuNiwxMyw4LjcsMjAuOSw4LjdjNi4yLDAsMTIuMS0xLjksMTcuMS01LjUgICAgbDI4LjEtMjBjMTAuMSw1LjMsMjAuNyw5LjYsMzEuNiwxM2w1LjYsMzMuNmMyLjQsMTQuMywxNC43LDI0LjcsMjkuMiwyNC43aDQyLjJjMTQuNSwwLDI2LjgtMTAuNCwyOS4yLTI0LjdsNS43LTMzLjYgICAgYzExLjMtMy41LDIyLjItOCwzMi42LTEzLjVsMjcuNywxOS44YzUsMy42LDExLDUuNSwxNy4yLDUuNWwwLDBjNy45LDAsMTUuMy0zLjEsMjAuOS04LjdsMjkuOC0yOS44YzEwLjItMTAuMiwxMS42LTI2LjMsMy4yLTM4LjEgICAgbC0xOS44LTI3LjhjNS41LTEwLjUsMTAuMS0yMS40LDEzLjUtMzIuNmwzMy42LTUuNmMxNC4zLTIuNCwyNC43LTE0LjcsMjQuNy0yOS4ydi00Mi4xICAgIEM0NzguOSwyMDMuODAxLDQ2OC41LDE5MS41MDEsNDU0LjIsMTg5LjEwMXogTTQ1MS45LDI2MC40MDFjMCwxLjMtMC45LDIuNC0yLjIsMi42bC00Miw3Yy01LjMsMC45LTkuNSw0LjgtMTAuOCw5LjkgICAgYy0zLjgsMTQuNy05LjYsMjguOC0xNy40LDQxLjljLTIuNyw0LjYtMi41LDEwLjMsMC42LDE0LjdsMjQuNywzNC44YzAuNywxLDAuNiwyLjUtMC4zLDMuNGwtMjkuOCwyOS44Yy0wLjcsMC43LTEuNCwwLjgtMS45LDAuOCAgICBjLTAuNiwwLTEuMS0wLjItMS41LTAuNWwtMzQuNy0yNC43Yy00LjMtMy4xLTEwLjEtMy4zLTE0LjctMC42Yy0xMy4xLDcuOC0yNy4yLDEzLjYtNDEuOSwxNy40Yy01LjIsMS4zLTkuMSw1LjYtOS45LDEwLjhsLTcuMSw0MiAgICBjLTAuMiwxLjMtMS4zLDIuMi0yLjYsMi4yaC00Mi4xYy0xLjMsMC0yLjQtMC45LTIuNi0yLjJsLTctNDJjLTAuOS01LjMtNC44LTkuNS05LjktMTAuOGMtMTQuMy0zLjctMjguMS05LjQtNDEtMTYuOCAgICBjLTIuMS0xLjItNC41LTEuOC02LjgtMS44Yy0yLjcsMC01LjUsMC44LTcuOCwyLjVsLTM1LDI0LjljLTAuNSwwLjMtMSwwLjUtMS41LDAuNWMtMC40LDAtMS4yLTAuMS0xLjktMC44bC0yOS44LTI5LjggICAgYy0wLjktMC45LTEtMi4zLTAuMy0zLjRsMjQuNi0zNC41YzMuMS00LjQsMy4zLTEwLjIsMC42LTE0LjhjLTcuOC0xMy0xMy44LTI3LjEtMTcuNi00MS44Yy0xLjQtNS4xLTUuNi05LTEwLjgtOS45bC00Mi4zLTcuMiAgICBjLTEuMy0wLjItMi4yLTEuMy0yLjItMi42di00Mi4xYzAtMS4zLDAuOS0yLjQsMi4yLTIuNmw0MS43LTdjNS4zLTAuOSw5LjYtNC44LDEwLjktMTBjMy43LTE0LjcsOS40LTI4LjksMTcuMS00MiAgICBjMi43LTQuNiwyLjQtMTAuMy0wLjctMTQuNmwtMjQuOS0zNWMtMC43LTEtMC42LTIuNSwwLjMtMy40bDI5LjgtMjkuOGMwLjctMC43LDEuNC0wLjgsMS45LTAuOGMwLjYsMCwxLjEsMC4yLDEuNSwwLjVsMzQuNSwyNC42ICAgIGM0LjQsMy4xLDEwLjIsMy4zLDE0LjgsMC42YzEzLTcuOCwyNy4xLTEzLjgsNDEuOC0xNy42YzUuMS0xLjQsOS01LjYsOS45LTEwLjhsNy4yLTQyLjNjMC4yLTEuMywxLjMtMi4yLDIuNi0yLjJoNDIuMSAgICBjMS4zLDAsMi40LDAuOSwyLjYsMi4ybDcsNDEuN2MwLjksNS4zLDQuOCw5LjYsMTAsMTAuOWMxNS4xLDMuOCwyOS41LDkuNyw0Mi45LDE3LjZjNC42LDIuNywxMC4zLDIuNSwxNC43LTAuNmwzNC41LTI0LjggICAgYzAuNS0wLjMsMS0wLjUsMS41LTAuNWMwLjQsMCwxLjIsMC4xLDEuOSwwLjhsMjkuOCwyOS44YzAuOSwwLjksMSwyLjMsMC4zLDMuNGwtMjQuNywzNC43Yy0zLjEsNC4zLTMuMywxMC4xLTAuNiwxNC43ICAgIGM3LjgsMTMuMSwxMy42LDI3LjIsMTcuNCw0MS45YzEuMyw1LjIsNS42LDkuMSwxMC44LDkuOWw0Miw3LjFjMS4zLDAuMiwyLjIsMS4zLDIuMiwyLjZ2NDIuMUg0NTEuOXoiIGZpbGw9IiNGRkZGRkYiLz4KCQk8cGF0aCBkPSJNMjM5LjQsMTM2LjAwMWMtNTcsMC0xMDMuMyw0Ni4zLTEwMy4zLDEwMy4zczQ2LjMsMTAzLjMsMTAzLjMsMTAzLjNzMTAzLjMtNDYuMywxMDMuMy0xMDMuM1MyOTYuNCwxMzYuMDAxLDIzOS40LDEzNi4wMDEgICAgeiBNMjM5LjQsMzE1LjYwMWMtNDIuMSwwLTc2LjMtMzQuMi03Ni4zLTc2LjNzMzQuMi03Ni4zLDc2LjMtNzYuM3M3Ni4zLDM0LjIsNzYuMyw3Ni4zUzI4MS41LDMxNS42MDEsMjM5LjQsMzE1LjYwMXoiIGZpbGw9IiNGRkZGRkYiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K);
+    -webkit-animation: controlSpin 4s linear infinite;
+            animation: controlSpin 4s linear infinite;
+}
+
+.ColorSwitcher--open .ColorSwitcher__control {
+    background: #fff;
+}
+
+.ColorSwitcher--open .ColorSwitcher__control:before {
+    background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ3OC43MDMgNDc4LjcwMyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDc4LjcwMyA0NzguNzAzOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCI+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTQ1NC4yLDE4OS4xMDFsLTMzLjYtNS43Yy0zLjUtMTEuMy04LTIyLjItMTMuNS0zMi42bDE5LjgtMjcuN2M4LjQtMTEuOCw3LjEtMjcuOS0zLjItMzguMWwtMjkuOC0yOS44ICAgIGMtNS42LTUuNi0xMy04LjctMjAuOS04LjdjLTYuMiwwLTEyLjEsMS45LTE3LjEsNS41bC0yNy44LDE5LjhjLTEwLjgtNS43LTIyLjEtMTAuNC0zMy44LTEzLjlsLTUuNi0zMy4yICAgIGMtMi40LTE0LjMtMTQuNy0yNC43LTI5LjItMjQuN2gtNDIuMWMtMTQuNSwwLTI2LjgsMTAuNC0yOS4yLDI0LjdsLTUuOCwzNGMtMTEuMiwzLjUtMjIuMSw4LjEtMzIuNSwxMy43bC0yNy41LTE5LjggICAgYy01LTMuNi0xMS01LjUtMTcuMi01LjVjLTcuOSwwLTE1LjQsMy4xLTIwLjksOC43bC0yOS45LDI5LjhjLTEwLjIsMTAuMi0xMS42LDI2LjMtMy4yLDM4LjFsMjAsMjguMSAgICBjLTUuNSwxMC41LTkuOSwyMS40LTEzLjMsMzIuN2wtMzMuMiw1LjZjLTE0LjMsMi40LTI0LjcsMTQuNy0yNC43LDI5LjJ2NDIuMWMwLDE0LjUsMTAuNCwyNi44LDI0LjcsMjkuMmwzNCw1LjggICAgYzMuNSwxMS4yLDguMSwyMi4xLDEzLjcsMzIuNWwtMTkuNywyNy40Yy04LjQsMTEuOC03LjEsMjcuOSwzLjIsMzguMWwyOS44LDI5LjhjNS42LDUuNiwxMyw4LjcsMjAuOSw4LjdjNi4yLDAsMTIuMS0xLjksMTcuMS01LjUgICAgbDI4LjEtMjBjMTAuMSw1LjMsMjAuNyw5LjYsMzEuNiwxM2w1LjYsMzMuNmMyLjQsMTQuMywxNC43LDI0LjcsMjkuMiwyNC43aDQyLjJjMTQuNSwwLDI2LjgtMTAuNCwyOS4yLTI0LjdsNS43LTMzLjYgICAgYzExLjMtMy41LDIyLjItOCwzMi42LTEzLjVsMjcuNywxOS44YzUsMy42LDExLDUuNSwxNy4yLDUuNWwwLDBjNy45LDAsMTUuMy0zLjEsMjAuOS04LjdsMjkuOC0yOS44YzEwLjItMTAuMiwxMS42LTI2LjMsMy4yLTM4LjEgICAgbC0xOS44LTI3LjhjNS41LTEwLjUsMTAuMS0yMS40LDEzLjUtMzIuNmwzMy42LTUuNmMxNC4zLTIuNCwyNC43LTE0LjcsMjQuNy0yOS4ydi00Mi4xICAgIEM0NzguOSwyMDMuODAxLDQ2OC41LDE5MS41MDEsNDU0LjIsMTg5LjEwMXogTTQ1MS45LDI2MC40MDFjMCwxLjMtMC45LDIuNC0yLjIsMi42bC00Miw3Yy01LjMsMC45LTkuNSw0LjgtMTAuOCw5LjkgICAgYy0zLjgsMTQuNy05LjYsMjguOC0xNy40LDQxLjljLTIuNyw0LjYtMi41LDEwLjMsMC42LDE0LjdsMjQuNywzNC44YzAuNywxLDAuNiwyLjUtMC4zLDMuNGwtMjkuOCwyOS44Yy0wLjcsMC43LTEuNCwwLjgtMS45LDAuOCAgICBjLTAuNiwwLTEuMS0wLjItMS41LTAuNWwtMzQuNy0yNC43Yy00LjMtMy4xLTEwLjEtMy4zLTE0LjctMC42Yy0xMy4xLDcuOC0yNy4yLDEzLjYtNDEuOSwxNy40Yy01LjIsMS4zLTkuMSw1LjYtOS45LDEwLjhsLTcuMSw0MiAgICBjLTAuMiwxLjMtMS4zLDIuMi0yLjYsMi4yaC00Mi4xYy0xLjMsMC0yLjQtMC45LTIuNi0yLjJsLTctNDJjLTAuOS01LjMtNC44LTkuNS05LjktMTAuOGMtMTQuMy0zLjctMjguMS05LjQtNDEtMTYuOCAgICBjLTIuMS0xLjItNC41LTEuOC02LjgtMS44Yy0yLjcsMC01LjUsMC44LTcuOCwyLjVsLTM1LDI0LjljLTAuNSwwLjMtMSwwLjUtMS41LDAuNWMtMC40LDAtMS4yLTAuMS0xLjktMC44bC0yOS44LTI5LjggICAgYy0wLjktMC45LTEtMi4zLTAuMy0zLjRsMjQuNi0zNC41YzMuMS00LjQsMy4zLTEwLjIsMC42LTE0LjhjLTcuOC0xMy0xMy44LTI3LjEtMTcuNi00MS44Yy0xLjQtNS4xLTUuNi05LTEwLjgtOS45bC00Mi4zLTcuMiAgICBjLTEuMy0wLjItMi4yLTEuMy0yLjItMi42di00Mi4xYzAtMS4zLDAuOS0yLjQsMi4yLTIuNmw0MS43LTdjNS4zLTAuOSw5LjYtNC44LDEwLjktMTBjMy43LTE0LjcsOS40LTI4LjksMTcuMS00MiAgICBjMi43LTQuNiwyLjQtMTAuMy0wLjctMTQuNmwtMjQuOS0zNWMtMC43LTEtMC42LTIuNSwwLjMtMy40bDI5LjgtMjkuOGMwLjctMC43LDEuNC0wLjgsMS45LTAuOGMwLjYsMCwxLjEsMC4yLDEuNSwwLjVsMzQuNSwyNC42ICAgIGM0LjQsMy4xLDEwLjIsMy4zLDE0LjgsMC42YzEzLTcuOCwyNy4xLTEzLjgsNDEuOC0xNy42YzUuMS0xLjQsOS01LjYsOS45LTEwLjhsNy4yLTQyLjNjMC4yLTEuMywxLjMtMi4yLDIuNi0yLjJoNDIuMSAgICBjMS4zLDAsMi40LDAuOSwyLjYsMi4ybDcsNDEuN2MwLjksNS4zLDQuOCw5LjYsMTAsMTAuOWMxNS4xLDMuOCwyOS41LDkuNyw0Mi45LDE3LjZjNC42LDIuNywxMC4zLDIuNSwxNC43LTAuNmwzNC41LTI0LjggICAgYzAuNS0wLjMsMS0wLjUsMS41LTAuNWMwLjQsMCwxLjIsMC4xLDEuOSwwLjhsMjkuOCwyOS44YzAuOSwwLjksMSwyLjMsMC4zLDMuNGwtMjQuNywzNC43Yy0zLjEsNC4zLTMuMywxMC4xLTAuNiwxNC43ICAgIGM3LjgsMTMuMSwxMy42LDI3LjIsMTcuNCw0MS45YzEuMyw1LjIsNS42LDkuMSwxMC44LDkuOWw0Miw3LjFjMS4zLDAuMiwyLjIsMS4zLDIuMiwyLjZ2NDIuMUg0NTEuOXoiIGZpbGw9IiMwMDAwMDAiLz4KCQk8cGF0aCBkPSJNMjM5LjQsMTM2LjAwMWMtNTcsMC0xMDMuMyw0Ni4zLTEwMy4zLDEwMy4zczQ2LjMsMTAzLjMsMTAzLjMsMTAzLjNzMTAzLjMtNDYuMywxMDMuMy0xMDMuM1MyOTYuNCwxMzYuMDAxLDIzOS40LDEzNi4wMDEgICAgeiBNMjM5LjQsMzE1LjYwMWMtNDIuMSwwLTc2LjMtMzQuMi03Ni4zLTc2LjNzMzQuMi03Ni4zLDc2LjMtNzYuM3M3Ni4zLDM0LjIsNzYuMyw3Ni4zUzI4MS41LDMxNS42MDEsMjM5LjQsMzE1LjYwMXoiIGZpbGw9IiMwMDAwMDAiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K);
+}
+
+.ColorSwitcher__switchs {
+    margin: -5px;
+}
+.ColorSwitcher__switchs #panel ul {
+    padding-left: 0px;   
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 1px;
+    margin-bottom: 0px;
+}
+.ColorSwitcher__switchs #panel ul li {
+    margin-bottom: 0px;
+}
+.ColorSwitcher__switch {
+    border-radius: 3px;
+    margin: 5px;
+}
+
+@-webkit-keyframes controlSpin {
+    100% {
+        -webkit-transform:rotate(360deg);
+                transform:rotate(360deg);
+    }
+}
+
+@keyframes controlSpin {
+    100% {
+        -webkit-transform:rotate(360deg);
+                transform:rotate(360deg);
+    }
+}
+
+/*color 1*/
+.color-1 .navbar-toggle {
+  background-color: var(--color_1);
+}
+.color-1 .mm-spn li.current-menu-item a {
+  color: var(--color_1);
+}
+.color-1 .entry-content a:not(.btn) {
+  color: var(--color_1);
+}
+.color-1 .bullet-point li:before,
+.color-1 .entry-content ul:not(.contact-opening-hours):not(.social-icon-list):not(.toc-table-list):not(.list-check) li:before {
+  background-color: var(--color_1);
+}
+.color-1 .entry-content ol > li:before {
+  background-color: var(--color_1);
+}
+.color-1 .header .phone-section .contact-phone {
+  color: var(--color_1);
+}
+.color-1 .header .desktop-menu #nav-desktop .nav-item.current-menu-item .nav-link {
+  color: var(--color_1);
+}
+.color-1 .header .desktop-menu #nav-desktop .nav-item .nav-link:hover,
+.color-1 .header .desktop-menu #nav-desktop .nav-item .dropdown-menu .nav-item:hover .nav-link {
+  color: var(--color_1);
+}
+.color-1 .btn.btn-primary {
+  background-color: var(--color_1);
+}
+.color-1 .hero-home .banner-title span {
+  color: var(--color_1);
+}
+.color-1 .hero-home .btn-play svg circle {
+  stroke: var(--color_1);
+}
+.color-1 .hero-home .btn-play svg path {
+  stroke: var(--color_1);
+}
+.color-1 .result-item .amount {
+  color: var(--color_1); 
+}
+.color-1 .result-item .amount:after {
+  background-color: var(--color_1);
+}
+.color-1 .swiper-pagination-bullet-active {
+  background: var(--color_1); 
+}
+.color-1 .intro-section .content-holder .item .icon-holder svg path {
+  fill: var(--color_1);
+}
+.color-1 .count-on .content-holder .cta-holder .cta-number .contact-phone {
+  color: var(--color_1); 
+}
+.color-1 .testimonial-awards .cta-holder .cta-number .contact-phone {
+  color: var(--color_1); 
+}
+.color-1 ul.social-icon-list li a {
+  background-color: var(--color_1);
+}
+.color-1 .gform_wrapper.gravity-theme .gform_footer .button {
+  background-color: var(--color_1);
+}
+.color-1 .footer .footer-bottom .footer-links ul.footer-menu li a:hover {
+  color: var(--color_1);
+}
+.color-1 .footer .footer-bottom .sitemap-privacy-links li a:hover {
+  color: var(--color_1);
+}
+.color-1 .footer .office-holder .select-office {
+  background: url(../wp-content/themes/horizon-apollo/dist/images/select-arrow-down-color1.jpg) #fff no-repeat 100%;
+}
+.color-1 .contact-content .offices-form-holder .office-holder .select-office-contact {
+  background: url(../wp-content/themes/horizon-apollo/dist/images/select-arrow-down-color1.jpg) #fff no-repeat 100%;
+}
+.color-1 .footer .footer-bottom a.btn-back circle {
+  fill: var(--color_1);
+}
+.color-1 .breadcrumb-container .breadcrumb a {
+  color: var(--color_1);
+}
+.color-1 .hero-bio .attorney-info .contact-info .info .icon-holder svg path {
+  fill: var(--color_1);
+}
+.color-1 .single-attorney-content .accordion .accordion-item .accordion-button:not(.collapsed) {
+  background-color: var(--color_1);
+}
+.color-1 .global-cta .content-holder .cta-holder .cta-number .contact-phone {
+  color: var(--color_1);
+}
+.color-1 .pa-item-link:hover {
+  background-color: var(--color_1);
+}
+.color-1 .toc ul li a:hover {
+  background-color: var(--color_1);
+}
+.color-1 .pa-cta .content .content-wrapper .info-holder .cta-number .contact-phone {
+  color: var(--color_1);
+}
+.color-1 .sidebar .sidebar-item:not(:empty) .widget_cw_results_widget .results-section-sidebar .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--color_1);
+}
+.color-1 .sidebar .sidebar-item:not(:empty) .widget_cw_cta_widget .contact-phone {
+  color: var(--color_1);
+}
+.color-1 .sidebar .sidebar-item:not(:empty) .widget_search .searchform #searchsubmit {
+  background-color: var(--color_1);
+}
+.color-1 .sidebar .sidebar-item:not(:empty) .sidebar-holder .list li a:hover, 
+.color-1 .sidebar .sidebar-item:not(:empty) .widget_search .list li a:hover, 
+.color-1 .sidebar .sidebar-item:not(:empty) .widget_categories .list li a:hover, 
+.color-1 .sidebar .sidebar-item:not(:empty) .widget_categories ul li a:hover, 
+.color-1 .sidebar .sidebar-item:not(:empty) .widget_archive .list li a:hover, 
+.color-1 .sidebar .sidebar-item:not(:empty) .widget_archive ul li a:hover {
+  background-color: var(--color_1);
+}
+.color-1 .blog-pagination ul li.active a {
+  background-color: var(--color_1);
+  border-color: var(--color_1);
+}
+.color-1 .blog-pagination ul li a:hover, 
+.color-1 .blog-pagination ul li span:hover {
+  background-color: var(--color_1);
+  border-color: var(--color_1);
+}
+.color-1 .category-archive-view .post-excerpt .blog-post:hover .info-holder {
+  border-color: var(--color_1);
+}
+.color-1 .qa-faqs .qa-category .qa-faq .qa-faq-title .qa-faq-anchor.active {
+  background-color: var(--color_1);
+}
+.color-1 .testimonials-item .testimonials-content .icon-holder svg path {
+  fill: var(--color_1);
+}
+.color-1 .location-intro .intro-sidebar .testimonial-wrap .icon-holder svg path {
+  fill: var(--color_1);
+}
+.color-1 .contact-content .offices-form-holder .office-info-contact .office-info__buttons a,
+.color-1 .contact-content .offices-form-holder .office-info-contact .office-info__buttons button {
+  color: var(--color_1);
+}
+.color-1 .contact-content .contact-sidebar .sidebar-widget.sidebar-follow .review-holder .icon-holder svg path {
+  fill: var(--color_1);
+}
+.color-1 .contact-content .contact-sidebar .sidebar-widget.sidebar-follow .review-holder .btn-link {
+  color: var(--color_1); 
+}
+.color-1 .toc ol > li:before {
+  background-color: var(--color_1);
+}
+.color-1 .toc ol > li a:hover {
+  background-color: var(--color_1);
+}
+.color-1 .bullet-point.list-check li:before, 
+.color-1 .entry-content ul.list-check:not(.contact-opening-hours):not(.social-icon-list):not(.toc-table-list) li:before {
+  background-color: var(--color_1);
+}
+
+.color-1 .pa-item-link .icon-holder svg, .color-1 .pa-item-link .icon-holder svg * {
+  fill: var(--color_1);
+}
+
+@media screen and (max-width: 767px) {
+  .color-1 .footer .office-holder .select-office {
+    border-color: var(--color_1);
+  }
+}
+
+/*color 2*/
+.color-2 .navbar-toggle {
+  background-color: var(--color_2);
+}
+.color-2 .mm-spn li.current-menu-item a {
+  color: var(--color_2);
+}
+.color-2 .entry-content a:not(.btn) {
+  color: var(--color_2);
+}
+.color-2 .bullet-point li:before,
+.color-2 .entry-content ul:not(.contact-opening-hours):not(.social-icon-list):not(.toc-table-list):not(.list-check) li:before {
+  background-color: var(--color_2);
+}
+.color-2 .entry-content ol > li:before {
+  background-color: var(--color_2);
+}
+.color-2 .header .phone-section .contact-phone {
+  color: var(--color_2);
+}
+.color-2 .header .desktop-menu #nav-desktop .nav-item.current-menu-item .nav-link {
+  color: var(--color_2);
+}
+.color-2 .header .desktop-menu #nav-desktop .nav-item .nav-link:hover,
+.color-2 .header .desktop-menu #nav-desktop .nav-item .dropdown-menu .nav-item:hover .nav-link {
+  color: var(--color_2);
+}
+.color-2 .btn.btn-primary {
+  background-color: var(--color_2);
+}
+.color-2 .hero-home .banner-title span {
+  color: var(--color_2);
+}
+.color-2 .hero-home .btn-play svg circle {
+  stroke: var(--color_2);
+}
+.color-2 .hero-home .btn-play svg path {
+  stroke: var(--color_2);
+}
+.color-2 .result-item .amount {
+  color: var(--color_2); 
+}
+.color-2 .result-item .amount:after {
+  background-color: var(--color_2);
+}
+.color-2 .swiper-pagination-bullet-active {
+  background: var(--color_2); 
+}
+.color-2 .intro-section .content-holder .item .icon-holder svg path {
+  fill: var(--color_2);
+}
+.color-2 .count-on .content-holder .cta-holder .cta-number .contact-phone {
+  color: var(--color_2); 
+}
+.color-2 .testimonial-awards .cta-holder .cta-number .contact-phone {
+  color: var(--color_2); 
+}
+.color-2 ul.social-icon-list li a {
+  background-color: var(--color_2);
+}
+.color-2 .gform_wrapper.gravity-theme .gform_footer .button {
+  background-color: var(--color_2);
+}
+.color-2 .footer .footer-bottom .footer-links ul.footer-menu li a:hover {
+  color: var(--color_2);
+}
+.color-2 .footer .footer-bottom .sitemap-privacy-links li a:hover {
+  color: var(--color_2);
+}
+.color-2 .footer .office-holder .select-office {
+  background: url(../wp-content/themes/horizon-apollo/dist/images/select-arrow-down-color2.jpg) #fff no-repeat 100%;
+}
+.color-2 .contact-content .offices-form-holder .office-holder .select-office-contact {
+  background: url(../wp-content/themes/horizon-apollo/dist/images/select-arrow-down-color2.jpg) #fff no-repeat 100%;
+}
+.color-2 .footer .footer-bottom a.btn-back circle {
+  fill: var(--color_2);
+}
+.color-2 .breadcrumb-container .breadcrumb a {
+  color: var(--color_2);
+}
+.color-2 .hero-bio .attorney-info .contact-info .info .icon-holder svg path {
+  fill: var(--color_2);
+}
+.color-2 .single-attorney-content .accordion .accordion-item .accordion-button:not(.collapsed) {
+  background-color: var(--color_2);
+}
+.color-2 .global-cta .content-holder .cta-holder .cta-number .contact-phone {
+  color: var(--color_2);
+}
+.color-2 .pa-item-link:hover {
+  background-color: var(--color_2);
+}
+.color-2 .toc ul li a:hover {
+  background-color: var(--color_2);
+}
+.color-2 .pa-cta .content .content-wrapper .info-holder .cta-number .contact-phone {
+  color: var(--color_2);
+}
+.color-2 .sidebar .sidebar-item:not(:empty) .widget_cw_results_widget .results-section-sidebar .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--color_2);
+}
+.color-2 .sidebar .sidebar-item:not(:empty) .widget_cw_cta_widget .contact-phone {
+  color: var(--color_2);
+}
+.color-2 .sidebar .sidebar-item:not(:empty) .widget_search .searchform #searchsubmit {
+  background-color: var(--color_2);
+}
+.color-2 .sidebar .sidebar-item:not(:empty) .sidebar-holder .list li a:hover, 
+.color-2 .sidebar .sidebar-item:not(:empty) .widget_search .list li a:hover, 
+.color-2 .sidebar .sidebar-item:not(:empty) .widget_categories .list li a:hover, 
+.color-2 .sidebar .sidebar-item:not(:empty) .widget_categories ul li a:hover, 
+.color-2 .sidebar .sidebar-item:not(:empty) .widget_archive .list li a:hover, 
+.color-2 .sidebar .sidebar-item:not(:empty) .widget_archive ul li a:hover {
+  background-color: var(--color_2);
+}
+.color-2 .blog-pagination ul li.active a {
+  background-color: var(--color_2);
+  border-color: var(--color_2);
+}
+.color-2 .blog-pagination ul li a:hover, 
+.color-2 .blog-pagination ul li span:hover {
+  background-color: var(--color_2);
+  border-color: var(--color_2);
+}
+.color-2 .category-archive-view .post-excerpt .blog-post:hover .info-holder {
+  border-color: var(--color_2);
+}
+.color-2 .qa-faqs .qa-category .qa-faq .qa-faq-title .qa-faq-anchor.active {
+  background-color: var(--color_2);
+}
+.color-2 .testimonials-item .testimonials-content .icon-holder svg path {
+  fill: var(--color_2);
+}
+.color-2 .location-intro .intro-sidebar .testimonial-wrap .icon-holder svg path {
+  fill: var(--color_2);
+}
+.color-2 .contact-content .offices-form-holder .office-info-contact .office-info__buttons a,
+.color-2 .contact-content .offices-form-holder .office-info-contact .office-info__buttons button {
+  color: var(--color_2);
+}
+.color-2 .contact-content .contact-sidebar .sidebar-widget.sidebar-follow .review-holder .icon-holder svg path {
+  fill: var(--color_2);
+}
+.color-2 .contact-content .contact-sidebar .sidebar-widget.sidebar-follow .review-holder .btn-link {
+  color: var(--color_2); 
+}
+.color-2 .toc ol > li:before {
+  background-color: var(--color_2);
+}
+.color-2 .toc ol > li a:hover {
+  background-color: var(--color_2);
+}
+.color-2 .bullet-point.list-check li:before, 
+.color-2 .entry-content ul.list-check:not(.contact-opening-hours):not(.social-icon-list):not(.toc-table-list) li:before {
+  background-color: var(--color_2);
+}
+.color-2 .pa-item-link .icon-holder svg, .color-2 .pa-item-link .icon-holder svg * {
+  fill: var(--color_2);
+}
+@media screen and (max-width: 767px) {
+  .color-2 .footer .office-holder .select-office {
+    border-color: var(--color_2);
+  }
+}
+
+/*color 3*/
+.color-3 .navbar-toggle {
+  background-color: var(--color_3);
+}
+.color-3 .mm-spn li.current-menu-item a {
+  color: var(--color_3);
+}
+.color-3 .entry-content a:not(.btn) {
+  color: var(--color_3);
+}
+.color-3 .bullet-point li:before,
+.color-3 .entry-content ul:not(.contact-opening-hours):not(.social-icon-list):not(.toc-table-list):not(.list-check) li:before {
+  background-color: var(--color_3);
+}
+.color-3 .entry-content ol > li:before {
+  background-color: var(--color_3);
+}
+.color-3 .header .phone-section .contact-phone {
+  color: var(--color_3);
+}
+.color-3 .header .desktop-menu #nav-desktop .nav-item.current-menu-item .nav-link {
+  color: var(--color_3);
+}
+.color-3 .header .desktop-menu #nav-desktop .nav-item .nav-link:hover,
+.color-3 .header .desktop-menu #nav-desktop .nav-item .dropdown-menu .nav-item:hover .nav-link {
+  color: var(--color_3);
+}
+.color-3 .btn.btn-primary {
+  background-color: var(--color_3);
+}
+.color-3 .hero-home .banner-title span {
+  color: var(--color_3);
+}
+.color-3 .hero-home .btn-play svg circle {
+  stroke: var(--color_3);
+}
+.color-3 .hero-home .btn-play svg path {
+  stroke: var(--color_3);
+}
+.color-3 .result-item .amount {
+  color: var(--color_3); 
+}
+.color-3 .result-item .amount:after {
+  background-color: var(--color_3);
+}
+.color-3 .swiper-pagination-bullet-active {
+  background: var(--color_3); 
+}
+.color-3 .intro-section .content-holder .item .icon-holder svg path {
+  fill: var(--color_3);
+}
+.color-3 .count-on .content-holder .cta-holder .cta-number .contact-phone {
+  color: var(--color_3); 
+}
+.color-3 .testimonial-awards .cta-holder .cta-number .contact-phone {
+  color: var(--color_3); 
+}
+.color-3 ul.social-icon-list li a {
+  background-color: var(--color_3);
+}
+.color-3 .gform_wrapper.gravity-theme .gform_footer .button {
+  background-color: var(--color_3);
+}
+.color-3 .footer .footer-bottom .footer-links ul.footer-menu li a:hover {
+  color: var(--color_3);
+}
+.color-3 .footer .footer-bottom .sitemap-privacy-links li a:hover {
+  color: var(--color_3);
+}
+.color-3 .footer .office-holder .select-office {
+  background: url(../wp-content/themes/horizon-apollo/dist/images/select-arrow-down-color3.jpg) #fff no-repeat 100%;
+}
+.color-3 .contact-content .offices-form-holder .office-holder .select-office-contact {
+  background: url(../wp-content/themes/horizon-apollo/dist/images/select-arrow-down-color3.jpg) #fff no-repeat 100%;
+}
+.color-3 .footer .footer-bottom a.btn-back circle {
+  fill: var(--color_3);
+}
+.color-3 .breadcrumb-container .breadcrumb a {
+  color: var(--color_3);
+}
+.color-3 .hero-bio .attorney-info .contact-info .info .icon-holder svg path {
+  fill: var(--color_3);
+}
+.color-3 .single-attorney-content .accordion .accordion-item .accordion-button:not(.collapsed) {
+  background-color: var(--color_3);
+}
+.color-3 .global-cta .content-holder .cta-holder .cta-number .contact-phone {
+  color: var(--color_3);
+}
+.color-3 .pa-item-link:hover {
+  background-color: var(--color_3);
+}
+.color-3 .toc ul li a:hover {
+  background-color: var(--color_3);
+}
+.color-3 .pa-cta .content .content-wrapper .info-holder .cta-number .contact-phone {
+  color: var(--color_3);
+}
+.color-3 .sidebar .sidebar-item:not(:empty) .widget_cw_results_widget .results-section-sidebar .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--color_3);
+}
+.color-3 .sidebar .sidebar-item:not(:empty) .widget_cw_cta_widget .contact-phone {
+  color: var(--color_3);
+}
+.color-3 .sidebar .sidebar-item:not(:empty) .widget_search .searchform #searchsubmit {
+  background-color: var(--color_3);
+}
+.color-3 .sidebar .sidebar-item:not(:empty) .sidebar-holder .list li a:hover, 
+.color-3 .sidebar .sidebar-item:not(:empty) .widget_search .list li a:hover, 
+.color-3 .sidebar .sidebar-item:not(:empty) .widget_categories .list li a:hover, 
+.color-3 .sidebar .sidebar-item:not(:empty) .widget_categories ul li a:hover, 
+.color-3 .sidebar .sidebar-item:not(:empty) .widget_archive .list li a:hover, 
+.color-3 .sidebar .sidebar-item:not(:empty) .widget_archive ul li a:hover {
+  background-color: var(--color_3);
+}
+.color-3 .blog-pagination ul li.active a {
+  background-color: var(--color_3);
+  border-color: var(--color_3);
+}
+.color-3 .blog-pagination ul li a:hover, 
+.color-3 .blog-pagination ul li span:hover {
+  background-color: var(--color_3);
+  border-color: var(--color_3);
+}
+.color-3 .category-archive-view .post-excerpt .blog-post:hover .info-holder {
+  border-color: var(--color_3);
+}
+.color-3 .qa-faqs .qa-category .qa-faq .qa-faq-title .qa-faq-anchor.active {
+  background-color: var(--color_3);
+}
+.color-3 .testimonials-item .testimonials-content .icon-holder svg path {
+  fill: var(--color_3);
+}
+.color-3 .location-intro .intro-sidebar .testimonial-wrap .icon-holder svg path {
+  fill: var(--color_3);
+}
+.color-3 .contact-content .offices-form-holder .office-info-contact .office-info__buttons a,
+.color-3 .contact-content .offices-form-holder .office-info-contact .office-info__buttons button {
+  color: var(--color_3);
+}
+.color-3 .contact-content .contact-sidebar .sidebar-widget.sidebar-follow .review-holder .icon-holder svg path {
+  fill: var(--color_3);
+}
+.color-3 .contact-content .contact-sidebar .sidebar-widget.sidebar-follow .review-holder .btn-link {
+  color: var(--color_3); 
+}
+.color-3 .toc ol > li:before {
+  background-color: var(--color_3);
+}
+.color-3 .toc ol > li a:hover {
+  background-color: var(--color_3);
+}
+.color-3 .bullet-point.list-check li:before, 
+.color-3 .entry-content ul.list-check:not(.contact-opening-hours):not(.social-icon-list):not(.toc-table-list) li:before {
+  background-color: var(--color_3);
+}
+.color-3 .pa-item-link .icon-holder svg, .color-3 .pa-item-link .icon-holder svg * {
+  fill: var(--color_3);
+}
+@media screen and (max-width: 767px) {
+  .color-3 .footer .office-holder .select-office {
+    border-color: var(--color_3);
+  }
+}
+
+/*color 4*/
+.color-4 .navbar-toggle {
+  background-color: var(--color_4);
+}
+.color-4 .mm-spn li.current-menu-item a {
+  color: var(--color_4);
+}
+.color-4 .entry-content a:not(.btn) {
+  color: var(--color_4);
+}
+.color-4 .bullet-point li:before,
+.color-4 .entry-content ul:not(.contact-opening-hours):not(.social-icon-list):not(.toc-table-list):not(.list-check) li:before {
+  background-color: var(--color_4);
+}
+.color-4 .entry-content ol > li:before {
+  background-color: var(--color_4);
+}
+.color-4 .header .phone-section .contact-phone {
+  color: var(--color_4);
+}
+.color-4 .header .desktop-menu #nav-desktop .nav-item.current-menu-item .nav-link {
+  color: var(--color_4);
+}
+.color-4 .header .desktop-menu #nav-desktop .nav-item .nav-link:hover,
+.color-4 .header .desktop-menu #nav-desktop .nav-item .dropdown-menu .nav-item:hover .nav-link {
+  color: var(--color_4);
+}
+.color-4 .btn.btn-primary {
+  background-color: var(--color_4);
+}
+.color-4 .hero-home .banner-title span {
+  color: var(--color_4);
+}
+.color-4 .hero-home .btn-play svg circle {
+  stroke: var(--color_4);
+}
+.color-4 .hero-home .btn-play svg path {
+  stroke: var(--color_4);
+}
+.color-4 .result-item .amount {
+  color: var(--color_4); 
+}
+.color-4 .result-item .amount:after {
+  background-color: var(--color_4);
+}
+.color-4 .swiper-pagination-bullet-active {
+  background: var(--color_4); 
+}
+.color-4 .intro-section .content-holder .item .icon-holder svg path {
+  fill: var(--color_4);
+}
+.color-4 .count-on .content-holder .cta-holder .cta-number .contact-phone {
+  color: var(--color_4); 
+}
+.color-4 .testimonial-awards .cta-holder .cta-number .contact-phone {
+  color: var(--color_4); 
+}
+.color-4 ul.social-icon-list li a {
+  background-color: var(--color_4);
+}
+.color-4 .gform_wrapper.gravity-theme .gform_footer .button {
+  background-color: var(--color_4);
+}
+.color-4 .footer .footer-bottom .footer-links ul.footer-menu li a:hover {
+  color: var(--color_4);
+}
+.color-4 .footer .footer-bottom .sitemap-privacy-links li a:hover {
+  color: var(--color_4);
+}
+.color-4 .footer .office-holder .select-office {
+  background: url(../wp-content/themes/horizon-apollo/dist/images/select-arrow-down-color4.jpg) #fff no-repeat 100%;
+}
+.color-4 .contact-content .offices-form-holder .office-holder .select-office-contact {
+  background: url(../wp-content/themes/horizon-apollo/dist/images/select-arrow-down-color4.jpg) #fff no-repeat 100%;
+}
+.color-4 .footer .footer-bottom a.btn-back circle {
+  fill: var(--color_4);
+}
+.color-4 .breadcrumb-container .breadcrumb a {
+  color: var(--color_4);
+}
+.color-4 .hero-bio .attorney-info .contact-info .info .icon-holder svg path {
+  fill: var(--color_4);
+}
+.color-4 .single-attorney-content .accordion .accordion-item .accordion-button:not(.collapsed) {
+  background-color: var(--color_4);
+}
+.color-4 .global-cta .content-holder .cta-holder .cta-number .contact-phone {
+  color: var(--color_4);
+}
+.color-4 .pa-item-link:hover {
+  background-color: var(--color_4);
+}
+.color-4 .toc ul li a:hover {
+  background-color: var(--color_4);
+}
+.color-4 .pa-cta .content .content-wrapper .info-holder .cta-number .contact-phone {
+  color: var(--color_4);
+}
+.color-4 .sidebar .sidebar-item:not(:empty) .widget_cw_results_widget .results-section-sidebar .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--color_4);
+}
+.color-4 .sidebar .sidebar-item:not(:empty) .widget_cw_cta_widget .contact-phone {
+  color: var(--color_4);
+}
+.color-4 .sidebar .sidebar-item:not(:empty) .widget_search .searchform #searchsubmit {
+  background-color: var(--color_4);
+}
+.color-4 .sidebar .sidebar-item:not(:empty) .sidebar-holder .list li a:hover, 
+.color-4 .sidebar .sidebar-item:not(:empty) .widget_search .list li a:hover, 
+.color-4 .sidebar .sidebar-item:not(:empty) .widget_categories .list li a:hover, 
+.color-4 .sidebar .sidebar-item:not(:empty) .widget_categories ul li a:hover, 
+.color-4 .sidebar .sidebar-item:not(:empty) .widget_archive .list li a:hover, 
+.color-4 .sidebar .sidebar-item:not(:empty) .widget_archive ul li a:hover {
+  background-color: var(--color_4);
+}
+.color-4 .blog-pagination ul li.active a {
+  background-color: var(--color_4);
+  border-color: var(--color_4);
+}
+.color-4 .blog-pagination ul li a:hover, 
+.color-4 .blog-pagination ul li span:hover {
+  background-color: var(--color_4);
+  border-color: var(--color_4);
+}
+.color-4 .category-archive-view .post-excerpt .blog-post:hover .info-holder {
+  border-color: var(--color_4);
+}
+.color-4 .qa-faqs .qa-category .qa-faq .qa-faq-title .qa-faq-anchor.active {
+  background-color: var(--color_4);
+}
+.color-4 .testimonials-item .testimonials-content .icon-holder svg path {
+  fill: var(--color_4);
+}
+.color-4 .location-intro .intro-sidebar .testimonial-wrap .icon-holder svg path {
+  fill: var(--color_4);
+}
+.color-4 .contact-content .offices-form-holder .office-info-contact .office-info__buttons a,
+.color-4 .contact-content .offices-form-holder .office-info-contact .office-info__buttons button {
+  color: var(--color_4);
+}
+.color-4 .contact-content .contact-sidebar .sidebar-widget.sidebar-follow .review-holder .icon-holder svg path {
+  fill: var(--color_4);
+}
+.color-4 .contact-content .contact-sidebar .sidebar-widget.sidebar-follow .review-holder .btn-link {
+  color: var(--color_4); 
+}
+.color-4 .toc ol > li:before {
+  background-color: var(--color_4);
+}
+.color-4 .toc ol > li a:hover {
+  background-color: var(--color_4);
+}
+.color-4 .bullet-point.list-check li:before, 
+.color-4 .entry-content ul.list-check:not(.contact-opening-hours):not(.social-icon-list):not(.toc-table-list) li:before {
+  background-color: var(--color_4);
+}
+.color-4 .pa-item-link .icon-holder svg, .color-4 .pa-item-link .icon-holder svg * {
+  fill: var(--color_4);
+}
+@media screen and (max-width: 767px) {
+  .color-4 .footer .office-holder .select-office {
+    border-color: var(--color_4);
+  }
+}
+
+/*color 5*/
+.color-5 .navbar-toggle {
+  background-color: var(--color_5);
+}
+.color-5 .mm-spn li.current-menu-item a {
+  color: var(--color_5);
+}
+.color-5 .entry-content a:not(.btn) {
+  color: var(--color_5);
+}
+.color-5 .bullet-point li:before,
+.color-5 .entry-content ul:not(.contact-opening-hours):not(.social-icon-list):not(.toc-table-list):not(.list-check) li:before {
+  background-color: var(--color_5);
+}
+.color-5 .entry-content ol > li:before {
+  background-color: var(--color_5);
+}
+.color-5 .header .phone-section .contact-phone {
+  color: var(--color_5);
+}
+.color-5 .header .desktop-menu #nav-desktop .nav-item.current-menu-item .nav-link {
+  color: var(--color_5);
+}
+.color-5 .header .desktop-menu #nav-desktop .nav-item .nav-link:hover,
+.color-5 .header .desktop-menu #nav-desktop .nav-item .dropdown-menu .nav-item:hover .nav-link {
+  color: var(--color_5);
+}
+.color-5 .btn.btn-primary {
+  background-color: var(--color_5);
+}
+.color-5 .hero-home .banner-title span {
+  color: var(--color_5);
+}
+.color-5 .hero-home .btn-play svg circle {
+  stroke: var(--color_5);
+}
+.color-5 .hero-home .btn-play svg path {
+  stroke: var(--color_5);
+}
+.color-5 .result-item .amount {
+  color: var(--color_5); 
+}
+.color-5 .result-item .amount:after {
+  background-color: var(--color_5);
+}
+.color-5 .swiper-pagination-bullet-active {
+  background: var(--color_5); 
+}
+.color-5 .intro-section .content-holder .item .icon-holder svg path {
+  fill: var(--color_5);
+}
+.color-5 .count-on .content-holder .cta-holder .cta-number .contact-phone {
+  color: var(--color_5); 
+}
+.color-5 .testimonial-awards .cta-holder .cta-number .contact-phone {
+  color: var(--color_5); 
+}
+.color-5 ul.social-icon-list li a {
+  background-color: var(--color_5);
+}
+.color-5 .gform_wrapper.gravity-theme .gform_footer .button {
+  background-color: var(--color_5);
+}
+.color-5 .footer .footer-bottom .footer-links ul.footer-menu li a:hover {
+  color: var(--color_5);
+}
+.color-5 .footer .footer-bottom .sitemap-privacy-links li a:hover {
+  color: var(--color_5);
+}
+.color-5 .footer .office-holder .select-office {
+  background: url(../wp-content/themes/horizon-apollo/dist/images/select-arrow-down-color5.jpg) #fff no-repeat 100%;
+}
+.color-5 .contact-content .offices-form-holder .office-holder .select-office-contact {
+  background: url(../wp-content/themes/horizon-apollo/dist/images/select-arrow-down-color5.jpg) #fff no-repeat 100%;
+}
+.color-5 .footer .footer-bottom a.btn-back circle {
+  fill: var(--color_5);
+}
+.color-5 .breadcrumb-container .breadcrumb a {
+  color: var(--color_5);
+}
+.color-5 .hero-bio .attorney-info .contact-info .info .icon-holder svg path {
+  fill: var(--color_5);
+}
+.color-5 .single-attorney-content .accordion .accordion-item .accordion-button:not(.collapsed) {
+  background-color: var(--color_5);
+}
+.color-5 .global-cta .content-holder .cta-holder .cta-number .contact-phone {
+  color: var(--color_5);
+}
+.color-5 .pa-item-link:hover {
+  background-color: var(--color_5);
+}
+.color-5 .toc ul li a:hover {
+  background-color: var(--color_5);
+}
+.color-5 .pa-cta .content .content-wrapper .info-holder .cta-number .contact-phone {
+  color: var(--color_5);
+}
+.color-5 .sidebar .sidebar-item:not(:empty) .widget_cw_results_widget .results-section-sidebar .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--color_5);
+}
+.color-5 .sidebar .sidebar-item:not(:empty) .widget_cw_cta_widget .contact-phone {
+  color: var(--color_5);
+}
+.color-5 .sidebar .sidebar-item:not(:empty) .widget_search .searchform #searchsubmit {
+  background-color: var(--color_5);
+}
+.color-5 .sidebar .sidebar-item:not(:empty) .sidebar-holder .list li a:hover, 
+.color-5 .sidebar .sidebar-item:not(:empty) .widget_search .list li a:hover, 
+.color-5 .sidebar .sidebar-item:not(:empty) .widget_categories .list li a:hover, 
+.color-5 .sidebar .sidebar-item:not(:empty) .widget_categories ul li a:hover, 
+.color-5 .sidebar .sidebar-item:not(:empty) .widget_archive .list li a:hover, 
+.color-5 .sidebar .sidebar-item:not(:empty) .widget_archive ul li a:hover {
+  background-color: var(--color_5);
+}
+.color-5 .blog-pagination ul li.active a {
+  background-color: var(--color_5);
+  border-color: var(--color_5);
+}
+.color-5 .blog-pagination ul li a:hover, 
+.color-5 .blog-pagination ul li span:hover {
+  background-color: var(--color_5);
+  border-color: var(--color_5);
+}
+.color-5 .category-archive-view .post-excerpt .blog-post:hover .info-holder {
+  border-color: var(--color_5);
+}
+.color-5 .qa-faqs .qa-category .qa-faq .qa-faq-title .qa-faq-anchor.active {
+  background-color: var(--color_5);
+}
+.color-5 .testimonials-item .testimonials-content .icon-holder svg path {
+  fill: var(--color_5);
+}
+.color-5 .location-intro .intro-sidebar .testimonial-wrap .icon-holder svg path {
+  fill: var(--color_5);
+}
+.color-5 .contact-content .offices-form-holder .office-info-contact .office-info__buttons a,
+.color-5 .contact-content .offices-form-holder .office-info-contact .office-info__buttons button {
+  color: var(--color_5);
+}
+.color-5 .contact-content .contact-sidebar .sidebar-widget.sidebar-follow .review-holder .icon-holder svg path {
+  fill: var(--color_5);
+}
+.color-5 .contact-content .contact-sidebar .sidebar-widget.sidebar-follow .review-holder .btn-link {
+  color: var(--color_5); 
+}
+.color-5 .toc ol > li:before {
+  background-color: var(--color_5);
+}
+.color-5 .toc ol > li a:hover {
+  background-color: var(--color_5);
+}
+.color-5 .bullet-point.list-check li:before, 
+.color-5 .entry-content ul.list-check:not(.contact-opening-hours):not(.social-icon-list):not(.toc-table-list) li:before {
+  background-color: var(--color_5);
+}
+.color-5 .pa-item-link .icon-holder svg, .color-5 .pa-item-link .icon-holder svg * {
+  fill: var(--color_5);
+}
+@media screen and (max-width: 767px) {
+  .color-5 .footer .office-holder .select-office {
+    border-color: var(--color_5);
+  }
+}
+
+/*color 6*/
+.color-6 .navbar-toggle {
+  background-color: var(--color_6);
+}
+.color-6 .mm-spn li.current-menu-item a {
+  color: var(--color_6);
+}
+.color-6 .entry-content a:not(.btn) {
+  color: var(--color_6);
+}
+.color-6 .bullet-point li:before,
+.color-6 .entry-content ul:not(.contact-opening-hours):not(.social-icon-list):not(.toc-table-list):not(.list-check) li:before {
+  background-color: var(--color_6);
+}
+.color-6 .entry-content ol > li:before {
+  background-color: var(--color_6);
+}
+.color-6 .header .phone-section .contact-phone {
+  color: var(--color_6);
+}
+.color-6 .header .desktop-menu #nav-desktop .nav-item.current-menu-item .nav-link {
+  color: var(--color_6);
+}
+.color-6 .header .desktop-menu #nav-desktop .nav-item .nav-link:hover,
+.color-6 .header .desktop-menu #nav-desktop .nav-item .dropdown-menu .nav-item:hover .nav-link {
+  color: var(--color_6);
+}
+.color-6 .btn.btn-primary {
+  background-color: var(--color_6);
+}
+.color-6 .hero-home .banner-title span {
+  color: var(--color_6);
+}
+.color-6 .hero-home .btn-play svg circle {
+  stroke: var(--color_6);
+}
+.color-6 .hero-home .btn-play svg path {
+  stroke: var(--color_6);
+}
+.color-6 .result-item .amount {
+  color: var(--color_6); 
+}
+.color-6 .result-item .amount:after {
+  background-color: var(--color_6);
+}
+.color-6 .swiper-pagination-bullet-active {
+  background: var(--color_6); 
+}
+.color-6 .intro-section .content-holder .item .icon-holder svg path {
+  fill: var(--color_6);
+}
+.color-6 .count-on .content-holder .cta-holder .cta-number .contact-phone {
+  color: var(--color_6); 
+}
+.color-6 .testimonial-awards .cta-holder .cta-number .contact-phone {
+  color: var(--color_6); 
+}
+.color-6 ul.social-icon-list li a {
+  background-color: var(--color_6);
+}
+.color-6 .gform_wrapper.gravity-theme .gform_footer .button {
+  background-color: var(--color_6);
+}
+.color-6 .footer .footer-bottom .footer-links ul.footer-menu li a:hover {
+  color: var(--color_6);
+}
+.color-6 .footer .footer-bottom .sitemap-privacy-links li a:hover {
+  color: var(--color_6);
+}
+.color-6 .footer .office-holder .select-office {
+  background: url(../wp-content/themes/horizon-apollo/dist/images/select-arrow-down-color6.jpg) #fff no-repeat 100%;
+}
+.color-6 .contact-content .offices-form-holder .office-holder .select-office-contact {
+  background: url(../wp-content/themes/horizon-apollo/dist/images/select-arrow-down-color6.jpg) #fff no-repeat 100%;
+}
+.color-6 .footer .footer-bottom a.btn-back circle {
+  fill: var(--color_6);
+}
+.color-6 .breadcrumb-container .breadcrumb a {
+  color: var(--color_6);
+}
+.color-6 .hero-bio .attorney-info .contact-info .info .icon-holder svg path {
+  fill: var(--color_6);
+}
+.color-6 .single-attorney-content .accordion .accordion-item .accordion-button:not(.collapsed) {
+  background-color: var(--color_6);
+}
+.color-6 .global-cta .content-holder .cta-holder .cta-number .contact-phone {
+  color: var(--color_6);
+}
+.color-6 .pa-item-link:hover {
+  background-color: var(--color_6);
+}
+.color-6 .toc ul li a:hover {
+  background-color: var(--color_6);
+}
+.color-6 .pa-cta .content .content-wrapper .info-holder .cta-number .contact-phone {
+  color: var(--color_6);
+}
+.color-6 .sidebar .sidebar-item:not(:empty) .widget_cw_results_widget .results-section-sidebar .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--color_6);
+}
+.color-6 .sidebar .sidebar-item:not(:empty) .widget_cw_cta_widget .contact-phone {
+  color: var(--color_6);
+}
+.color-6 .sidebar .sidebar-item:not(:empty) .widget_search .searchform #searchsubmit {
+  background-color: var(--color_6);
+}
+.color-6 .sidebar .sidebar-item:not(:empty) .sidebar-holder .list li a:hover, 
+.color-6 .sidebar .sidebar-item:not(:empty) .widget_search .list li a:hover, 
+.color-6 .sidebar .sidebar-item:not(:empty) .widget_categories .list li a:hover, 
+.color-6 .sidebar .sidebar-item:not(:empty) .widget_categories ul li a:hover, 
+.color-6 .sidebar .sidebar-item:not(:empty) .widget_archive .list li a:hover, 
+.color-6 .sidebar .sidebar-item:not(:empty) .widget_archive ul li a:hover {
+  background-color: var(--color_6);
+}
+.color-6 .blog-pagination ul li.active a {
+  background-color: var(--color_6);
+  border-color: var(--color_6);
+}
+.color-6 .blog-pagination ul li a:hover, 
+.color-6 .blog-pagination ul li span:hover {
+  background-color: var(--color_6);
+  border-color: var(--color_6);
+}
+.color-6 .category-archive-view .post-excerpt .blog-post:hover .info-holder {
+  border-color: var(--color_6);
+}
+.color-6 .qa-faqs .qa-category .qa-faq .qa-faq-title .qa-faq-anchor.active {
+  background-color: var(--color_6);
+}
+.color-6 .testimonials-item .testimonials-content .icon-holder svg path {
+  fill: var(--color_6);
+}
+.color-6 .location-intro .intro-sidebar .testimonial-wrap .icon-holder svg path {
+  fill: var(--color_6);
+}
+.color-6 .contact-content .offices-form-holder .office-info-contact .office-info__buttons a,
+.color-6 .contact-content .offices-form-holder .office-info-contact .office-info__buttons button {
+  color: var(--color_6);
+}
+.color-6 .contact-content .contact-sidebar .sidebar-widget.sidebar-follow .review-holder .icon-holder svg path {
+  fill: var(--color_6);
+}
+.color-6 .contact-content .contact-sidebar .sidebar-widget.sidebar-follow .review-holder .btn-link {
+  color: var(--color_6); 
+}
+.color-6 .toc ol > li:before {
+  background-color: var(--color_6);
+}
+.color-6 .toc ol > li a:hover {
+  background-color: var(--color_6);
+}
+.color-6 .bullet-point.list-check li:before, 
+.color-6 .entry-content ul.list-check:not(.contact-opening-hours):not(.social-icon-list):not(.toc-table-list) li:before {
+  background-color: var(--color_6);
+}
+.color-6 .pa-item-link .icon-holder svg, .color-6 .pa-item-link .icon-holder svg * {
+  fill: var(--color_6);
+}
+@media screen and (max-width: 767px) {
+  .color-6 .footer .office-holder .select-office {
+    border-color: var(--color_6);
+  }
+}
+
+</style><!-- Color Switcher Box -->	
+
+	<!-- Google Tag Manager (noscript) -->
+
+	<a href="index.html#main-wrapper" class="skiplink" tabindex="1">Skip Navigation</a>
+
+	<!-- Mobile Menu -->
+	<div id="mobile-menu">
+		<div id="mmenu" class="menu-header-menu-container"><ul id="menu-header-menu" class="mobile-menu-panel"><li id="menu-item-264" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-264"><a href="../index.html">Home</a></li>
+<li id="menu-item-266" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-266"><a href="index.html#">About Us</a>
+<ul class="sub-menu">
+	<li id="menu-item-848" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-848"><a href="../index.html%3Fp=480.html">Firm Overview</a></li>
+	<li id="menu-item-850" class="menu-item menu-item-type-post_type menu-item-object-attorney menu-item-850"><a href="../index.html%3Fp=127.html">Blake Severson</a></li>
+	<li id="menu-item-1680" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1680"><a href="index.html">Community</a></li>
+</ul>
+</li>
+<li id="menu-item-270" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-270"><a href="index.html#">Legal Services</a>
+<ul class="sub-menu">
+	<li id="menu-item-935" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-935"><a href="../index.html%3Fp=541.html">Car Accident</a></li>
+	<li id="menu-item-937" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-937"><a href="../index.html%3Fp=683.html">Generic Page</a></li>
+	<li id="menu-item-896" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-896"><a href="../index.html%3Fp=532.html">See All Legal Services</a></li>
+</ul>
+</li>
+<li id="menu-item-1362" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-1362"><a href="../blog/index.html">Blog</a></li>
+<li id="menu-item-278" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-278"><a href="index.html#">Resources</a>
+<ul class="sub-menu">
+	<li id="menu-item-1681" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1681"><a href="../testimonials/index.html">Testimonials</a></li>
+	<li id="menu-item-1679" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1679"><a href="../case-results/index.html">Case Results</a></li>
+</ul>
+</li>
+<li id="menu-item-280" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-280"><a href="index.html#">Locations</a>
+<ul class="sub-menu">
+	<li id="menu-item-1068" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1068"><a href="../index.html%3Fp=384.html">Seattle Office</a></li>
+	<li id="menu-item-2493" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2493"><a href="../index.html%3Fp=2449.html">Redmond Office</a></li>
+</ul>
+</li>
+<li id="menu-item-1982" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1982"><a href="../index.html%3Fp=1855.html">Contact</a></li>
+</ul></div>	</div>
+	<!-- Mobile Menu END -->
+
+	<div id="panel">
+		<header class="header">
+			<div class="container">
+				<div class="top-header">
+						<div class="site-logo-wrap">
+							<a class="site-logo" href="../index.html">
+								<img class="logo img-fluid" src="../wp-content/uploads/2022/01/logo-1.png" alt="TRG LAW GROUP, LLP">
+							</a>
+						</div>
+
+						<div class="header-right">
+							<div class="phone-section">
+								<a href="tel:8009997777" class="contact-phone">
+									<span class="tap-mobile">Tap to Call</span>
+									<span class="label">Free Case Evaluation</span>
+									<span class="number">800-999-7777</span>
+								</a>
+							</div>
+
+							<div class="desktop-menu">
+								<nav id="nav-desktop" class="navbar navbar-expand-lg d-none d-xl-block">
+									<div class="menu-container"><ul id="menu-header-menu-1" class="navbar-nav header-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home nav-item menu-item-264"><a title="Home" href="../index.html" class="nav-link">Home</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children nav-item menu-item-266 dropdown"><a title="About Us" href="index.html#" data-bs-toggle="dropdown" class="nav-link dropdown-toggle" aria-haspopup="true">About Us <span class="caret"></span></a>
+<ul class=" dropdown-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-848"><a title="Firm Overview" href="../index.html%3Fp=480.html" class="nav-link">Firm Overview</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-attorney nav-item menu-item-850"><a title="Blake Severson" href="../index.html%3Fp=127.html" class="nav-link">Blake Severson</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-1680"><a title="Community" href="index.html" class="nav-link">Community</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children nav-item menu-item-270 dropdown"><a title="Legal Services" href="index.html#" data-bs-toggle="dropdown" class="nav-link dropdown-toggle" aria-haspopup="true">Legal Services <span class="caret"></span></a>
+<ul class=" dropdown-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-935"><a title="Car Accident" href="../index.html%3Fp=541.html" class="nav-link">Car Accident</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-937"><a title="Generic Page" href="../index.html%3Fp=683.html" class="nav-link">Generic Page</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-896"><a title="See All Legal Services" href="../index.html%3Fp=532.html" class="nav-link">See All Legal Services</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent nav-item menu-item-1362"><a title="Blog" href="../blog/index.html" class="nav-link">Blog</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children nav-item menu-item-278 dropdown"><a title="Resources" href="index.html#" data-bs-toggle="dropdown" class="nav-link dropdown-toggle" aria-haspopup="true">Resources <span class="caret"></span></a>
+<ul class=" dropdown-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-1681"><a title="Testimonials" href="../testimonials/index.html" class="nav-link">Testimonials</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-1679"><a title="Case Results" href="../case-results/index.html" class="nav-link">Case Results</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children nav-item menu-item-280 dropdown"><a title="Locations" href="index.html#" data-bs-toggle="dropdown" class="nav-link dropdown-toggle" aria-haspopup="true">Locations <span class="caret"></span></a>
+<ul class=" dropdown-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-1068"><a title="Seattle Office" href="../index.html%3Fp=384.html" class="nav-link">Seattle Office</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-2493"><a title="Redmond Office" href="../index.html%3Fp=2449.html" class="nav-link">Redmond Office</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-1982"><a title="Contact" href="../index.html%3Fp=1855.html" class="nav-link">Contact</a></li>
+</ul></div>								</nav>
+							</div>
+
+							<!-- Button triggering Mobile Nav -->
+							<button class="navbar-toggle mobile-button" aria-label="Toggle navigation">
+								<span class="menu__bar"></span>
+								<span class="menu__bar"></span>
+								<span class="menu__bar"></span>
+							</button>
+							<!-- Close Button -->
+							<button class="navbar-toggle close__mobileMenu" aria-label="close navigation">
+								<span class="x"></span>
+								<span class="x"></span>
+							</button>
+						</div>
+				</div>
+			</div>
+		</header>		
+
+		<main class="main-wrapper" id="main-wrapper">
+			
+			 			
+			<article   class="pos-rel">
+
+			
+			
+	<section class="main-content community-content">
+
+    <section class="intro-community">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-xl-7 order-xl-2">
+                          <div class="image-holder">
+                <img width="810" height="423" src="../wp-content/uploads/2022/01/community-featured-img.jpg" class="attachment-full size-full" alt="Community Image" decoding="async" loading="lazy" srcset="../wp-content/uploads/2022/01/community-featured-img.jpg 810w, ../wp-content/uploads/2022/01/community-featured-img-300x157.jpg 300w, ../wp-content/uploads/2022/01/community-featured-img-768x401.jpg 768w" sizes="(max-width: 810px) 100vw, 810px" />              </div>
+                      </div>
+          <div class="col-xl-5">
+            <div class="content entry-content">
+              <h1>Giving back to our  Community</h1>
+                                            <p>Nulla eu ipsum non nunc accumsan tempor non id magna. Aliquam id iaculis odio, vitae pharetra nunc. Phasellus sollicitudin tincidunt cursus. Fusce sed malesuada leo. Integer semper, augue at elementum facilisis. ads</p>
+                          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+<div class="breadcrumb-container d-none d-md-block">
+
+	<div class="container">
+
+		
+			<div class="breadcrumb"><span><span><a href="../index.html">Home</a></span>  <span class="breadcrumb_last" aria-current="page">Community</span></span></div>
+			
+		
+	</div>
+
+</div>
+    
+        <section class="community-section-2">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-xl-5">
+            <div class="image-holder">
+              							<img src="../wp-content/uploads/2022/01/community-section-img.jpg" alt="Community Image">
+            </div>
+          </div>
+          <div class="col-xl-7">
+            <div class="content entry-content">
+              <p>Integer nec vehicula ipsum. Praesent blandit erat eget ornare imperdiet. Vivamus sagittis enim sem, id suscipit risus finibus mattis. Morbi mattis luctus eleifend. Aenean cursus gravida sapien at ullamcorper. Cras viverra lobortis metus at tempus. Duis velit enim, porta nec mauris eget, dapibus dignissim nisl. Aliquam id iaculis odio, vitae pharetra nunc. Phasellus sollicitudin tincidunt cursus. Fusce sed malesuada leo. Integer semper, augue at elementum facilisis, enim urna mattis diam, vitae dignissim nibh ipsum ac lorem. Nulla eu ipsum non nunc accumsan tempor non id magna. Aliquam id iaculis odio, vitae pharetra nunc.</p>
+<p>Phasellus sollicitudin tincidunt cursus. Fusce sed malesuada leo. Integer semper, augue at elementum facilisis, enim urna mattis diam, vitae dignissim nibh ipsum ac lorem. Nulla eu ipsum non nunc accumsan tempor non id magna.</p>
+<p>Donec elementum lorem vitae enim tristique lobortis. Suspendisse pulvinar magna non nibh lacinia tincidunt. Vivamus vel urna at arcu facilisis egestas. Ut dui tortor, tincidunt ac neque at, semper molestie mauris. Cras viverra lobortis metus at tempus. Duis velit enim, porta nec mauris eget, dapibus dignissim nisl. Aliquam id iaculis odio, vitae pharetra nunc. Phasellus sollicitudin tincidunt cursus. Fusce sed malesuada leo.</p>
+<p>Praesent blandit erat eget ornare imperdiet. Vivamus sagittis enim sem, id suscipit risus finibus mattis. Morbi mattis luctus eleifend.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    <section class="community-events">
+      <div class="container">
+                  <div class="section-title text-center">Community Events</div>
+          <div class="events-list">
+                        <div class="event-item">
+              <div class="image-holder">
+                <a href="suspendisse-consectetur-erat-sed-purus-luctus-urna-lacinia-2/index.html">
+                  <img width="285" height="258" src="../wp-content/uploads/2022/01/community-post-img5.jpg" class="attachment-full size-full wp-post-image" alt="" decoding="async" loading="lazy" />                </a>
+              </div>
+              <div class="content-holder">
+                <div class="title"><a href="suspendisse-consectetur-erat-sed-purus-luctus-urna-lacinia-2/index.html">Suspendisse consectetur erat sed purus luctus urna lacinia.</a></div>
+                <div class="excerpt">
+                  <p>Phasellus sapien nulla, rutrum ultricies ultricies eget, dictum vel erat. Ut accumsan, sem nec feugiat auctor, eros metus efficitur metus, ac mattis ligula turpis ac neque. Nulla tempor convallis massa, vitae feugiat ante vulputate id. Quisque eget ornare eratsdfsdf, non iaculis leo. Aliquam mollis enim sit amet quam egestas elementum. Donec et quam et diam&#8230;</p>
+                </div>
+                <div class="btn-wrapper">
+                  <a href="suspendisse-consectetur-erat-sed-purus-luctus-urna-lacinia-2/index.html" class="btn btn-primary">Learn More</a>
+                </div>
+              </div>
+            </div>  
+                        <div class="event-item">
+              <div class="image-holder">
+                <a href="phasellus-sapien-nulla-rutltricies-eget-dictum-vel-erat/index.html">
+                  <img width="285" height="258" src="../wp-content/uploads/2022/01/community-post-img4.jpg" class="attachment-full size-full wp-post-image" alt="" decoding="async" loading="lazy" />                </a>
+              </div>
+              <div class="content-holder">
+                <div class="title"><a href="phasellus-sapien-nulla-rutltricies-eget-dictum-vel-erat/index.html">Phasellus sapien nulla, rutltricies eget, dictum vel erat.</a></div>
+                <div class="excerpt">
+                  <p>Phasellus sapien nulla, rutrum ultricies ultricies eget, dictum vel erat. Ut accumsan, sem nec feugiat auctor, eros metus efficitur metus, ac mattis ligula turpis ac neque. Nulla tempor convallis massa, vitae feugiat ante vulputate id. Quisque eget ornare eratsdfsdf, non iaculis leo. Aliquam mollis enim sit amet quam egestas elementum. Donec et quam et diam&#8230;</p>
+                </div>
+                <div class="btn-wrapper">
+                  <a href="phasellus-sapien-nulla-rutltricies-eget-dictum-vel-erat/index.html" class="btn btn-primary">Learn More</a>
+                </div>
+              </div>
+            </div>  
+                        <div class="event-item">
+              <div class="image-holder">
+                <a href="suspendisse-consectetur-erat-sed-purus-luctus-urna-lacinia/index.html">
+                  <img width="285" height="258" src="../wp-content/uploads/2022/01/community-post-img3.jpg" class="attachment-full size-full wp-post-image" alt="" decoding="async" loading="lazy" />                </a>
+              </div>
+              <div class="content-holder">
+                <div class="title"><a href="suspendisse-consectetur-erat-sed-purus-luctus-urna-lacinia/index.html">Suspendisse consectetur erat sed purus luctus urna lacinia.</a></div>
+                <div class="excerpt">
+                  <p>Phasellus sapien nulla, rutrum ultricies ultricies eget, dictum vel erat. Ut accumsan, sem nec feugiat auctor, eros metus efficitur metus, ac mattis ligula turpis ac neque. Nulla tempor convallis massa, vitae feugiat ante vulputate id. Quisque eget ornare eratsdfsdf, non iaculis leo. Aliquam mollis enim sit amet quam egestas elementum. Donec et quam et diam&#8230;</p>
+                </div>
+                <div class="btn-wrapper">
+                  <a href="suspendisse-consectetur-erat-sed-purus-luctus-urna-lacinia/index.html" class="btn btn-primary">Learn More</a>
+                </div>
+              </div>
+            </div>  
+                        <div class="event-item">
+              <div class="image-holder">
+                <a href="usce-non-arcu-venenatis-nulla-pulvinar-venenatis-congue-ut-lorem/index.html">
+                  <img width="285" height="258" src="../wp-content/uploads/2022/01/community-post-img2.jpg" class="attachment-full size-full wp-post-image" alt="" decoding="async" loading="lazy" />                </a>
+              </div>
+              <div class="content-holder">
+                <div class="title"><a href="usce-non-arcu-venenatis-nulla-pulvinar-venenatis-congue-ut-lorem/index.html">Usce non arcu venenatis nulla pulvinar venenatis congue ut lorem</a></div>
+                <div class="excerpt">
+                  <p>Curabitur nec turpis in purus semper pulvinar nec malesuada ipsum. Integer dictum erat quis metus facilisis consectetur. Sed imperdiet lacus nec pharetra facilisis. Suspendisse posuere dignissim ipsum a iaculis. Integer vel turpis sit amet lectus pharetra fermentum.</p>
+                </div>
+                <div class="btn-wrapper">
+                  <a href="usce-non-arcu-venenatis-nulla-pulvinar-venenatis-congue-ut-lorem/index.html" class="btn btn-primary">Learn More</a>
+                </div>
+              </div>
+            </div>  
+                        <div class="event-item">
+              <div class="image-holder">
+                <a href="vestibulum-venenatis-erat-nec-dui-mollis-porta/index.html">
+                  <img width="285" height="258" src="../wp-content/uploads/2022/01/community-post-img1.jpg" class="attachment-full size-full wp-post-image" alt="" decoding="async" loading="lazy" />                </a>
+              </div>
+              <div class="content-holder">
+                <div class="title"><a href="vestibulum-venenatis-erat-nec-dui-mollis-porta/index.html">Vestibulum venenatis erat nec dui mollis porta</a></div>
+                <div class="excerpt">
+                  <p>Cras rutrum odio scelerisque lorem ultricies consectetur. Fusce non arcu venenatis nulla pulvinar venenatis congue ut lorem. In molestie vestibulum quam, vitae iaculis magna. Curabitur nec turpis in purus semper pulvinar nec malesuada ipsum. Integer dictum erat quis metus facilisis consectetur.t lectus pharetra fermentum.</p>
+                </div>
+                <div class="btn-wrapper">
+                  <a href="vestibulum-venenatis-erat-nec-dui-mollis-porta/index.html" class="btn btn-primary">Learn More</a>
+                </div>
+              </div>
+            </div>  
+                      </div>
+                <div class="blog-pagination">
+          <div class="blog-navigation"><ul>
+<li class="page-li">Page</li><li class="active"><a href="index.html">1</a></li><li><a href="http://apollo2.local/community/page/2/">2</a></li><li class="next-link"><a href="http://apollo2.local/community/page/2/" ><svg width="9" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M.805 13.282a1.182 1.182 0 0 1 0-1.674L5.413 7 .805 2.393A1.184 1.184 0 1 1 2.48.718L7.93 6.17a1.183 1.183 0 0 1 0 1.674l-5.45 5.451a1.193 1.193 0 0 1-1.675-.012Z" fill="#000" fill-opacity=".15"/></svg></a></li></ul></div>
+        </div>
+      </div>
+    </section>
+
+	</section>
+
+		
+<section id="awards-part" class="awards-part pos-rel">
+	<div class="container">
+		<div class="section-title">
+			Our Awards & Recognition		</div>
+		<div class="awards-slider-wrapper">
+			<div class="swiper awards-wrap" id="awards-wrap">
+				<div class="swiper-wrapper align-items-center">
+
+					
+					<div class="swiper-slide d-flex align-items-center justify-content-center">
+						<div class="img-holder">
+																									<img width="134" height="107" src="../wp-content/uploads/2022/01/badge-rating.png" class="attachment-full size-full" alt="avvo rating logo" decoding="async" loading="lazy" />																						</div>
+					</div>
+					
+					<div class="swiper-slide d-flex align-items-center justify-content-center">
+						<div class="img-holder">
+																									<img width="134" height="134" src="../wp-content/uploads/2022/01/best-of-the-best.png" class="attachment-full size-full" alt="best-of-the-best logo" decoding="async" loading="lazy" srcset="../wp-content/uploads/2022/01/best-of-the-best.png 134w, ../wp-content/uploads/2022/01/best-of-the-best-70x70.png 70w, ../wp-content/uploads/2022/01/best-of-the-best-100x100.png 100w, ../wp-content/uploads/2022/01/best-of-the-best-130x130.png 130w" sizes="(max-width: 134px) 100vw, 134px" />																						</div>
+					</div>
+					
+					<div class="swiper-slide d-flex align-items-center justify-content-center">
+						<div class="img-holder">
+																									<img width="116" height="116" src="../wp-content/uploads/2022/01/justia.png" class="attachment-full size-full" alt="justia logo" decoding="async" loading="lazy" srcset="../wp-content/uploads/2022/01/justia.png 116w, ../wp-content/uploads/2022/01/justia-70x70.png 70w, ../wp-content/uploads/2022/01/justia-100x100.png 100w" sizes="(max-width: 116px) 100vw, 116px" />																						</div>
+					</div>
+					
+					<div class="swiper-slide d-flex align-items-center justify-content-center">
+						<div class="img-holder">
+																									<img width="119" height="120" src="../wp-content/uploads/2022/01/best-business.png" class="attachment-full size-full" alt="best-business logo" decoding="async" loading="lazy" srcset="../wp-content/uploads/2022/01/best-business.png 119w, ../wp-content/uploads/2022/01/best-business-70x70.png 70w, ../wp-content/uploads/2022/01/best-business-100x100.png 100w" sizes="(max-width: 119px) 100vw, 119px" />																						</div>
+					</div>
+					
+					<div class="swiper-slide d-flex align-items-center justify-content-center">
+						<div class="img-holder">
+																									<img width="128" height="121" src="../wp-content/uploads/2022/01/Best-lawyer-2019.png" class="attachment-full size-full" alt="Best-lawyer-2019 logo" decoding="async" loading="lazy" />																						</div>
+					</div>
+					
+					<div class="swiper-slide d-flex align-items-center justify-content-center">
+						<div class="img-holder">
+																									<img width="112" height="112" src="../wp-content/uploads/2022/01/million-dollar.png" class="attachment-full size-full" alt="million-dollar logo" decoding="async" loading="lazy" srcset="../wp-content/uploads/2022/01/million-dollar.png 112w, ../wp-content/uploads/2022/01/million-dollar-70x70.png 70w, ../wp-content/uploads/2022/01/million-dollar-100x100.png 100w" sizes="(max-width: 112px) 100vw, 112px" />																						</div>
+					</div>
+					
+					<div class="swiper-slide d-flex align-items-center justify-content-center">
+						<div class="img-holder">
+																									<img width="110" height="110" src="../wp-content/uploads/2022/01/multi-million-dollar.png" class="attachment-full size-full" alt="multi-million-dollar logo" decoding="async" loading="lazy" srcset="../wp-content/uploads/2022/01/multi-million-dollar.png 110w, ../wp-content/uploads/2022/01/multi-million-dollar-70x70.png 70w, ../wp-content/uploads/2022/01/multi-million-dollar-100x100.png 100w" sizes="(max-width: 110px) 100vw, 110px" />																						</div>
+					</div>
+					
+					<div class="swiper-slide d-flex align-items-center justify-content-center">
+						<div class="img-holder">
+																									<img width="119" height="120" src="../wp-content/uploads/2022/01/avvo-rating.png" class="attachment-full size-full" alt="Avvo Logo" decoding="async" loading="lazy" srcset="../wp-content/uploads/2022/01/avvo-rating.png 119w, ../wp-content/uploads/2022/01/avvo-rating-70x70.png 70w, ../wp-content/uploads/2022/01/avvo-rating-100x100.png 100w" sizes="(max-width: 119px) 100vw, 119px" />																						</div>
+					</div>
+					
+				</div>
+			</div>
+			<div class="awards-button swiper-button-prev"></div>
+			<div class="awards-button swiper-button-next"></div>
+		</div>
+	</div>
+</section>
+
+	</article>
+	<!--end of <article> tag-->
+</main>
+<!--end of .main-wrapper main tag-->
+
+<footer class="footer">
+
+	<div class="footer-top">
+
+		<div class="container">
+
+			<div class="row align-items-center">
+
+				<div class="footer-logo-wrap">
+					<a href="../index.html">
+						<img class="logo img-fluid" src="../wp-content/uploads/2022/01/logo-white.png" alt="TRG LAW GROUP, LLP">
+					</a>
+				</div>
+
+				<div class="footer-top-right">
+					<div class="footer-number">
+						<span class="text-uppercase">Call us</span>
+						<a href="tel:8009997777" class="contact-phone" aria-label="Phone">
+							800-999-7777						</a>
+					</div>
+					
+					<ul class="social-icon-list">
+													<li><a href="https://twitter.com/" target="_blank" aria-label="social media link mobile"><i class="icon-twitter" aria-hidden="true"></i></a></li>
+													<li><a href="https://www.facebook.com/" target="_blank" aria-label="social media link mobile"><i class="icon-facebook" aria-hidden="true"></i></a></li>
+													<li><a href="https://www.linkedin.com/" target="_blank" aria-label="social media link mobile"><i class="icon-linkedin" aria-hidden="true"></i></a></li>
+													<li><a href="https://www.instagram.com/" target="_blank" aria-label="social media link mobile"><i class="icon-instagram" aria-hidden="true"></i></a></li>
+											</ul>
+
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer-contact">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="office-info-wrapper">
+					
+												<div class="office-holder">
+							<div class="office-heading">Our Offices:</div>
+														<div class="select-office-wrapper">
+								<select class="select-office">
+																<option value="384">Seattle Office</option>
+																<option value="2449">Redmond Office</option>
+																</select>
+							</div>
+									
+							<div class="office-info"></div>
+						</div>
+	
+						<div class="office-map"></div>
+
+										
+				</div>
+				
+				<div class="form-wrap">
+					
+					<div class="form-title">Get a Free Consultation</div>
+					
+					<script type="text/javascript"></script>
+                <div class='gf_browser_unknown gform_wrapper gravity-theme gform-theme--no-framework' data-form-theme='gravity-theme' data-form-index='0' id='gform_wrapper_1' ><div id='gf_1' class='gform_anchor' tabindex='-1'></div>
+                        <div class='gform_heading'>
+							<p class='gform_required_legend'>&quot;<span class="gfield_required gfield_required_asterisk">*</span>&quot; indicates required fields</p>
+                        </div><form method='post' enctype='multipart/form-data' target='gform_ajax_frame_1' id='gform_1'  action='index.html#gf_1' data-formid='1' novalidate>
+                        <div class='gform-body gform_body'><div id='gform_fields_1' class='gform_fields top_label form_sublabel_below description_below'><div id="field_1_1"  class="gfield gfield--type-text gfield_contains_required field_sublabel_below gfield--no-description field_description_below gfield_visibility_visible"  data-js-reload="field_1_1"><label class='gfield_label gform-field-label' for='input_1_1' >Name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_text'><input name='input_1' id='input_1_1' type='text' value='' class='large'     aria-required="true" aria-invalid="false"   /> </div></div><div id="field_1_2"  class="gfield gfield--type-phone gfield--width-full gfield_contains_required field_sublabel_below gfield--no-description field_description_below gfield_visibility_visible"  data-js-reload="field_1_2"><label class='gfield_label gform-field-label' for='input_1_2' >Phone<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_phone'><input name='input_2' id='input_1_2' type='tel' value='' class='large'   aria-required="true" aria-invalid="false"   /></div></div><div id="field_1_3"  class="gfield gfield--type-email gfield_contains_required field_sublabel_below gfield--no-description field_description_below gfield_visibility_visible"  data-js-reload="field_1_3"><label class='gfield_label gform-field-label' for='input_1_3' >Email<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_email'>
+                            <input name='input_3' id='input_1_3' type='email' value='' class='large'    aria-required="true" aria-invalid="false"  />
+                        </div></div><div id="field_1_4"  class="gfield gfield--type-textarea gfield_contains_required field_sublabel_below gfield--no-description field_description_below gfield_visibility_visible"  data-js-reload="field_1_4"><label class='gfield_label gform-field-label' for='input_1_4' >Comments<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_textarea'><textarea name='input_4' id='input_1_4' class='textarea large'     aria-required="true" aria-invalid="false"   rows='10' cols='50'></textarea></div></div></div></div>
+        <div class='gform_footer top_label'> <input type='submit' id='gform_submit_button_1' class='gform_button button' value='Send to our Attorneys'  onclick='if(window["gf_submitting_1"]){return false;}  if( !jQuery("#gform_1")[0].checkValidity || jQuery("#gform_1")[0].checkValidity()){window["gf_submitting_1"]=true;}  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_1"]){return false;} if( !jQuery("#gform_1")[0].checkValidity || jQuery("#gform_1")[0].checkValidity()){window["gf_submitting_1"]=true;}  jQuery("#gform_1").trigger("submit",[true]); }' /> <input type='hidden' name='gform_ajax' value='form_id=1&amp;title=&amp;description=&amp;tabindex=0' />
+            <input type='hidden' class='gform_hidden' name='is_submit_1' value='1' />
+            <input type='hidden' class='gform_hidden' name='gform_submit' value='1' />
+            
+            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+            <input type='hidden' class='gform_hidden' name='state_1' value='WyJbXSIsImZlZDU4ZjVmOGY2N2VkNzU1NDU1NjIzMjUyMGRlZDY3Il0=' />
+            <input type='hidden' class='gform_hidden' name='gform_target_page_number_1' id='gform_target_page_number_1' value='0' />
+            <input type='hidden' class='gform_hidden' name='gform_source_page_number_1' id='gform_source_page_number_1' value='1' />
+            <input type='hidden' name='gform_field_values' value='' />
+            
+        </div>
+                        <p style="display: none !important;"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="150"/><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p></form>
+                        </div>
+		                <iframe style='display:none;width:0px;height:0px;' src='about:blank' name='gform_ajax_frame_1' id='gform_ajax_frame_1' title='This iframe contains the logic required to handle Ajax powered Gravity Forms.'></iframe>
+		                <script type="text/javascript">
+gform.initializeOnLoaded( function() {gformInitSpinner( 1, 'http://apollo2.local/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery('#gform_ajax_frame_1').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_1');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_1').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_1').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_1').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_1').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_1').offset().top - mt); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_1').val();gformInitSpinner( 1, 'http://apollo2.local/wp-content/plugins/gravityforms/images/spinner.svg', true );jQuery(document).trigger('gform_page_loaded', [1, current_page]);window['gf_submitting_1'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}setTimeout(function(){jQuery('#gform_wrapper_1').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_1').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [1]);window['gf_submitting_1'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_1').text());}, 50);}else{jQuery('#gform_1').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger('gform_post_render', [1, current_page]);} );} );
+</script>
+
+				</div><!--.form-wrap-->
+			</div>
+		</div>
+	</div>
+
+	<div class="footer-bottom">
+
+		<div class="footer-links">
+			<div class="container">
+				<div class="footer-nav-wrap">
+					<nav class="text-center">
+						<div class="menu-footer-menu-container"><ul id="menu-footer-menu" class="footer-menu"><li id="menu-item-307" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home nav-item menu-item-307"><a title="Home" href="../index.html" class="nav-link">Home</a></li>
+<li id="menu-item-1037" class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-1037"><a title="About Us" href="../index.html%3Fp=480.html" class="nav-link">About Us</a></li>
+<li id="menu-item-1039" class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-1039"><a title="Areas of Practice" href="../index.html%3Fp=532.html" class="nav-link">Areas of Practice</a></li>
+<li id="menu-item-1722" class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-1722"><a title="Community" href="index.html" class="nav-link">Community</a></li>
+<li id="menu-item-2420" class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-2420"><a title="Media" href="../index.html%3Fp=2379.html" class="nav-link">Media</a></li>
+<li id="menu-item-1041" class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-1041"><a title="Locations" href="../index.html%3Fp=384.html" class="nav-link">Locations</a></li>
+<li id="menu-item-1393" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent nav-item menu-item-1393"><a title="Blog" href="../blog/index.html" class="nav-link">Blog</a></li>
+<li id="menu-item-1944" class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-1944"><a title="Contact Us" href="../index.html%3Fp=1855.html" class="nav-link">Contact Us</a></li>
+</ul></div>					</nav>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer-copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-xl-6">
+						<div class="copyright-links-holder">
+							<p class="copyright">&copy; 2023 Personal Injury Attorneys TRG Law Group, LLP. All Rights Reserved</p>
+							<ul id="menu-footer-sub-menu" class="sitemap-privacy-links"><li id="menu-item-2883" class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-2883"><a title="Site Map" href="../index.html%3Fp=1864.html" class="nav-link">Site Map</a></li>
+<li id="menu-item-2882" class="menu-item menu-item-type-post_type menu-item-object-page nav-item menu-item-2882"><a title="Disclaimer" href="../index.html%3Fp=2584.html" class="nav-link">Disclaimer</a></li>
+<li id="menu-item-2886" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy nav-item menu-item-2886"><a title="Privacy Policy" href="../index.html%3Fp=3.html" class="nav-link">Privacy Policy</a></li>
+</ul>						</div>
+					</div>
+					<div class="col-xl-6">
+						<p class="built-by mb-md-0"><img src="../wp-content/themes/horizon-apollo/dist/images/CW-favicon.png" alt="cw logo"> Site by <a href="https://www.consultwebs.com/" target="_blank" rel="nofollow">Consultwebs.com</a>: Personal Injury Law Firm Website Designers Lawyer Marketing.</p>
+					</div>
+				</div>
+				<a href="index.html#top-page" class="btn-back">
+					<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<circle opacity="0.450149" cx="30" cy="30" r="30" fill="#998561"/>
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M30 19L29.9991 19.0008V19L14 34.5393L16.5337 37L29.9991 23.9215L43.4654 37L46 34.5393L30 19Z" fill="white"/>
+					</svg>
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+
+</footer>
+
+
+</div>
+<!-- END of Panel -->
+
+<!-- Modals Section -->
+<!-- Hours Modal -->
+<div class="cw__modal-dialog" id="hoursModal" tabindex="-1" role="dialog" aria-labelledby="modal-title">
+
+	<div class="inner-modal" role="document">
+
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<div id="modal-title" class="modal-title">Office Hours</div>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+
+			<div class="modal-body">
+
+				<div class="opening-hours">
+
+					<table>
+						<tbody>
+						
+							
+							
+							
+							
+							
+							
+							
+						
+						</tbody>
+
+					</table>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+
+					<script async>
+						var video_width = decodeURIComponent("640");
+						var video_height = decodeURIComponent("480");
+						var video_alignment = decodeURIComponent("center");
+						var video_showinfo = decodeURIComponent("1");
+						var video_autoplay = decodeURIComponent("0");
+						var video_rel = decodeURIComponent("0");
+					</script>
+					<link rel='stylesheet' id='gravity_forms_theme_reset-css' href='../wp-content/plugins/gravityforms/assets/css/dist/gravity-forms-theme-reset.min.css%3Fver=2.7.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='gravity_forms_theme_foundation-css' href='../wp-content/plugins/gravityforms/assets/css/dist/gravity-forms-theme-foundation.min.css%3Fver=2.7.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='gravity_forms_theme_framework-css' href='../wp-content/plugins/gravityforms/assets/css/dist/gravity-forms-theme-framework.min.css%3Fver=2.7.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='gravity_forms_orbital_theme-css' href='../wp-content/plugins/gravityforms/assets/css/dist/gravity-forms-orbital-theme.min.css%3Fver=2.7.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='gform_basic-css' href='../wp-content/plugins/gravityforms/assets/css/dist/basic.min.css%3Fver=2.7.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='gform_theme_components-css' href='../wp-content/plugins/gravityforms/assets/css/dist/theme-components.min.css%3Fver=2.7.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='gform_theme_ie11-css' href='../wp-content/plugins/gravityforms/assets/css/dist/theme-ie11.min.css%3Fver=2.7.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='gform_theme-css' href='../wp-content/plugins/gravityforms/assets/css/dist/theme.min.css%3Fver=2.7.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='cw_video-colorbox-css' href='../wp-content/plugins/cwdevelopers-cw_video_plugin-f5a8bdfb7bd7/colorbox/colorbox.css%3Fver=2020.11.03.css' type='text/css' media='all' />
+<script type='text/javascript' src='http://analytics.consultwebs.com/v1/sites.js?ver=0.8.11' id='cw-site-analytics-js'></script>
+<script type='text/javascript' id='horizon-theme-js-js-before'>
+const ThemeURLS = {"childThemeURL":"http:\/\/apollo2.local\/wp-content\/themes\/horizon-apollo","coreThemeURL":"http:\/\/apollo2.local\/wp-content\/themes\/horizon-core"}
+</script>
+<script type='text/javascript' src='../wp-content/themes/horizon-apollo/dist/js/theme.bundle.js%3Fver=1677748733' id='horizon-theme-js-js'></script>
+<script type='text/javascript' id='cw-toc-script-js-extra'>
+/* <![CDATA[ */
+var shortcodeValue = {"columns":"","widthtype":"","widthvalue":""};
+var acf_toc_vars = {"column_layout":"columns-one","width":"custom","custom_width":"350","type_list":"Unordered List","location":"Sidebar","viewport":"992","activate":null,"heading_title":"Table of Contents","class_of_list":"","sidebar_container":".main-content .sidebar","sidebarmobile_container":".main-content .mobile-toc-widget-container","main_content_container":"#main-wrapper","exclusion_list":"","accordion_activate":""};
+/* ]]> */
+</script>
+<script type="module" async src="../wp-content/plugins/cw-table-of-contents/includes/js/cw_table_of_contents.js%3Fver=6.1.1"></script><script type='text/javascript' src='../wp-includes/js/dist/vendor/regenerator-runtime.min.js%3Fver=0.13.9' id='regenerator-runtime-js'></script>
+<script type='text/javascript' src='../wp-includes/js/dist/vendor/wp-polyfill.min.js%3Fver=3.15.0' id='wp-polyfill-js'></script>
+<script type='text/javascript' src='../wp-includes/js/dist/dom-ready.min.js%3Fver=392bdd43726760d1f3ca' id='wp-dom-ready-js'></script>
+<script type='text/javascript' src='../wp-includes/js/dist/hooks.min.js%3Fver=4169d3cf8e8d95a3d6d5' id='wp-hooks-js'></script>
+<script type='text/javascript' src='../wp-includes/js/dist/i18n.min.js%3Fver=9e794f35a71bb98672ae' id='wp-i18n-js'></script>
+<script type='text/javascript' id='wp-i18n-js-after'>
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script type='text/javascript' src='../wp-includes/js/dist/a11y.min.js%3Fver=ecce20f002eda4c19664' id='wp-a11y-js'></script>
+<script type='text/javascript' defer='defer' src='../wp-content/plugins/gravityforms/js/jquery.json.min.js%3Fver=2.7.1' id='gform_json-js'></script>
+<script type='text/javascript' id='gform_gravityforms-js-extra'>
+/* <![CDATA[ */
+var gform_i18n = {"datepicker":{"days":{"monday":"Mo","tuesday":"Tu","wednesday":"We","thursday":"Th","friday":"Fr","saturday":"Sa","sunday":"Su"},"months":{"january":"January","february":"February","march":"March","april":"April","may":"May","june":"June","july":"July","august":"August","september":"September","october":"October","november":"November","december":"December"},"firstDay":1,"iconText":"Select date"}};
+var gf_legacy_multi = [];
+var gform_gravityforms = {"strings":{"invalid_file_extension":"This type of file is not allowed. Must be one of the following:","delete_file":"Delete this file","in_progress":"in progress","file_exceeds_limit":"File exceeds size limit","illegal_extension":"This type of file is not allowed.","max_reached":"Maximum number of files reached","unknown_error":"There was a problem while saving the file on the server","currently_uploading":"Please wait for the uploading to complete","cancel":"Cancel","cancel_upload":"Cancel this upload","cancelled":"Cancelled"},"vars":{"images_url":"http:\/\/apollo2.local\/wp-content\/plugins\/gravityforms\/images"}};
+var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","symbol_right":"","symbol_padding":"","thousand_separator":",","decimal_separator":".","decimals":2,"code":"USD"},"base_url":"http:\/\/apollo2.local\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"http:\/\/apollo2.local\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","version_hash":"d419e6b3a98dc882bb3984c300b1181f","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+/* ]]> */
+</script>
+<script type='text/javascript' defer='defer' src='../wp-content/plugins/gravityforms/js/gravityforms.min.js%3Fver=2.7.1' id='gform_gravityforms-js'></script>
+<script type='text/javascript' defer='defer' src='../wp-content/plugins/gravityforms/js/jquery.maskedinput.min.js%3Fver=2.7.1' id='gform_masked_input-js'></script>
+<script type='text/javascript' defer='defer' src='../wp-content/plugins/gravityforms/assets/js/dist/utils.min.js%3Fver=bc402317bb1b621c1f695fe582d28717' id='gform_gravityforms_utils-js'></script>
+<script type='text/javascript' defer='defer' src='../wp-content/plugins/gravityforms/assets/js/dist/vendor-theme.min.js%3Fver=79e6346cf824ee59c1f023f916789c24' id='gform_gravityforms_theme_vendors-js'></script>
+<script type='text/javascript' id='gform_gravityforms_theme-js-extra'>
+/* <![CDATA[ */
+var gform_theme_config = {"common":{"form":{"honeypot":{"version_hash":"d419e6b3a98dc882bb3984c300b1181f"}}},"hmr_dev":"","public_path":"http:\/\/apollo2.local\/wp-content\/plugins\/gravityforms\/assets\/js\/dist\/"};
+/* ]]> */
+</script>
+<script type='text/javascript' defer='defer' src='../wp-content/plugins/gravityforms/assets/js/dist/scripts-theme.min.js%3Fver=9c9598c0c1b63e5624987254d79ea8ef' id='gform_gravityforms_theme-js'></script>
+<script defer type='text/javascript' src='../wp-content/plugins/akismet/_inc/akismet-frontend.js%3Fver=1677747703' id='akismet-frontend-js'></script>
+<script type='text/javascript' src='../wp-content/plugins/cwdevelopers-cw_video_plugin-f5a8bdfb7bd7/colorbox/jquery.colorbox-min.js%3Fver=2020.11.03' id='cw_video-colorbox-js'></script>
+<script type='text/javascript' src='../wp-content/plugins/cwdevelopers-cw_video_plugin-f5a8bdfb7bd7/cw-video.js%3Fver=2020.11.03' id='cw_video-global-js'></script>
+<script type="text/javascript">
+gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 1) {jQuery('#input_1_2').mask('(999) 999-9999').bind('keypress', function(e){if(e.which == 13){jQuery(this).blur();} } );} } );jQuery(document).bind('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );
+</script>
+<script type="text/javascript">
+gform.initializeOnLoaded( function() { jQuery(document).trigger('gform_post_render', [1, 1]) } );
+</script>
+
+<!-- JS Color Switcher -->
+<script type="text/javascript" src="../wp-content/themes/horizon-apollo/color_switcher/switcher.js"></script>
+<!-- JS Color Switcher -->
+
+</body>
+
+
+</html>

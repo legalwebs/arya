@@ -1,0 +1,1026 @@
+/******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/js/custom/generalFns.js":
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _customjs_module_loader_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("./src/js/custom/module-loader.js");
+
+const CwThemeFramework = {
+  async generalFns() {
+    const office = document.querySelector('.select-office');
+
+    if (office) {
+      this.loadLocations(office);
+      office.addEventListener('change', () => this.loadLocations(office));
+    } //(For Contact page Location Widget)
+
+
+    const officeContact = document.querySelector('.select-office-contact');
+
+    if (officeContact) {
+      this.loadLocationsContact(officeContact);
+      officeContact.addEventListener('change', () => this.loadLocationsContact(officeContact));
+    } // add .toc-exclude class to faq section heading tags.
+
+
+    const faqTitles = document.querySelectorAll('.qa-faq-title');
+    const faqHeading = document.querySelector('.faq-catname');
+    faqTitles.forEach(title => {
+      title.classList.add('toc-exclude');
+    });
+
+    if (faqHeading) {
+      faqHeading.classList.add('toc-exclude');
+    }
+
+    document.addEventListener('click', e => {
+      if (e.target.classList.contains('qa-faq-anchor')) {
+        const anchorLink = e.target;
+        e.preventDefault();
+
+        if (anchorLink.classList.contains('active')) {
+          anchorLink.classList.remove('active');
+          anchorLink.parentNode.classList.remove('open');
+        } else {
+          const currentActiveElement = anchorLink.closest('.qa-category').querySelector('.active');
+          if (currentActiveElement) currentActiveElement.classList.remove('active');
+          const faqAnchors = document.getElementsByClassName('qa-faq-anchor');
+
+          for (var i = 0; i < faqAnchors.length; i++) {
+            faqAnchors[i].classList.remove('active');
+            faqAnchors[i].parentNode.classList.remove('open');
+          }
+
+          anchorLink.classList.add('active');
+          anchorLink.parentNode.classList.add('open');
+        }
+      }
+    }, true);
+  },
+
+  /**
+   * Load Locations
+   */
+  async loadLocations(locationID) {
+    if (locationID) {
+      _customjs_module_loader_js__WEBPACK_IMPORTED_MODULE_0__["default"].modals().then(modals => {
+        const officeHours = new modals('.cw-modal');
+        officeHours.init();
+      });
+      const apiURL = `/api/location/${locationID.value}/`;
+      const officeBox = document.querySelector('.office-info');
+      const officeMap = document.querySelector('.office-map');
+      const officeHours = document.querySelector('.opening-hours');
+      const officeInfo = await fetch(apiURL);
+      const officeDetails = await officeInfo.json();
+
+      if (officeDetails.success) {
+        const {
+          firmName,
+          directionURL,
+          city,
+          state,
+          zip,
+          location_address_1,
+          location_address_2,
+          phone,
+          email,
+          toll_free_number,
+          location_fax,
+          footer_map,
+          monday_hours,
+          tuesday_hours,
+          wednesday_hours,
+          thursday_hours,
+          friday_hours,
+          saturday_hours,
+          sunday_hours
+        } = officeDetails.data;
+        const firmNameHTML = firmName ? `<strong>${firmName}</strong>` : '';
+        const address1HTML = location_address_1 ? `<span>${location_address_1}</span><br>` : '';
+        const address2HTML = location_address_2 ? `<span>${location_address_2}</span><br>` : '';
+        const phoneHTML = phone ? `<a href="tel:${phone}" class="ctm-no-swap" aria-label="Phone">${phone}</a>` : '';
+        const emailHTML = email ? `<a href="mailto:${email}" aria-label="Email Address">${email}</a>` : '';
+        const officeInfoButtons = `<p class="esp-text">Se Habla Español</p>
+                <div class="office-info__buttons">
+                   <a href="${directionURL}" target="_blank" aria-label="Direction Link">Directions</a>
+                   <button class="cw-modal" data-cw-target="#hoursModal" id="office-hours">Office Hours</button>
+               </div>`;
+        const footerMapHTML = footer_map ? `<a href="${directionURL}" target="_blank" aria-label="Direction Link"><img src="${footer_map}" alt="${firmName}" /></a>` : '';
+        const address = `${firmNameHTML}
+               <address>
+                   ${address1HTML}
+                   ${address2HTML}
+                   <span>${city}, ${state} ${zip}</span><br>
+               </address>
+               ${phoneHTML}<br>
+               ${emailHTML}${officeInfoButtons}`;
+        officeBox.innerHTML = address;
+        officeMap.innerHTML = footerMapHTML;
+        const mondayHoursHTML = monday_hours ? `<tr><td class="day">Monday</td><td class="time"><span>${monday_hours}</span></td></tr>` : '';
+        const tuesdayHoursHTML = tuesday_hours ? `<tr><td class="day">Tuesday</td><td class="time"><span>${tuesday_hours}</span></td></tr>` : '';
+        const wednesdayHoursHTML = wednesday_hours ? `<tr><td class="day">Wednesday</td><td class="time"><span>${wednesday_hours}</span></td></tr>` : '';
+        const thursdayHoursHTML = thursday_hours ? `<tr><td class="day">Thursday</td><td class="time"><span>${thursday_hours}</span></td></tr>` : '';
+        const fridayHoursHTML = friday_hours ? `<tr><td class="day">Friday</td><td class="time"><span>${friday_hours}</span></td></tr>` : '';
+        const saturdayHoursHTML = saturday_hours ? `<tr><td class="day">Saturday</td><td class="time"><span>${saturday_hours}</span></td></tr>` : '';
+        const sundayHoursHTML = sunday_hours ? `<tr><td class="day">Sunday</td><td class="time"><span>${sunday_hours}</span></td></tr>` : '';
+        const hoursOffice = `<table>
+                              <tbody>
+                              ${mondayHoursHTML}
+                              ${tuesdayHoursHTML}
+                              ${wednesdayHoursHTML}
+                              ${thursdayHoursHTML}
+                              ${fridayHoursHTML}
+                              ${saturdayHoursHTML}
+                              ${sundayHoursHTML}
+                              </tbody>
+                            </table>`; // Hours Modal
+
+        officeHours.innerHTML = hoursOffice;
+      }
+    }
+  },
+
+  /**
+  * Load Locations (For Contact page Location Widget)
+  */
+  async loadLocationsContact(contactLocationID) {
+    if (contactLocationID) {
+      _customjs_module_loader_js__WEBPACK_IMPORTED_MODULE_0__["default"].modals().then(modals => {
+        const officeHours = new modals('.cw-modal');
+        officeHours.init();
+      });
+      const apiURL = `/api/location/${contactLocationID.value}/`;
+      const officeBox = document.querySelector('.office-info-contact');
+      const officeMap = document.querySelector('.office-map-contact');
+      const officeHours = document.querySelector('.opening-hours');
+      const officeInfo = await fetch(apiURL);
+      const officeDetails = await officeInfo.json();
+
+      if (officeDetails.success) {
+        const {
+          firmName,
+          directionURL,
+          city,
+          state,
+          zip,
+          location_address_1,
+          location_address_2,
+          phone,
+          email,
+          toll_free_number,
+          location_fax,
+          footer_map,
+          monday_hours,
+          tuesday_hours,
+          wednesday_hours,
+          thursday_hours,
+          friday_hours,
+          saturday_hours,
+          sunday_hours
+        } = officeDetails.data;
+        const firmNameHTML = firmName ? `<strong>${firmName}</strong>` : '';
+        const address1HTML = location_address_1 ? `<span>${location_address_1}</span><br>` : '';
+        const address2HTML = location_address_2 ? `<span>${location_address_2}</span><br>` : '';
+        const phoneHTML = phone ? `<a href="tel:${phone}" class="ctm-no-swap" aria-label="Phone">${phone}</a>` : '';
+        const emailHTML = email ? `<a href="mailto:${email}" aria-label="Email Address">${email}</a>` : '';
+        const officeInfoButtons = `<div class="office-info__buttons">
+                   <a href="${directionURL}" target="_blank" aria-label="Direction Link">Directions</a>
+                   <button class="cw-modal" data-cw-target="#hoursModal" id="office-hours">Office Hours</button>
+               </div>`;
+        const footerMapHTML = footer_map ? `<a href="${directionURL}" target="_blank" aria-label="Direction Link"><img src="${footer_map}" alt="${firmName}" /></a>` : '';
+        const address = `${firmNameHTML}
+               <address>
+                   ${address1HTML}
+                   ${address2HTML}
+                   <span>${city}, ${state} ${zip}</span><br>
+               </address>
+               ${phoneHTML}<br>
+               ${emailHTML}${officeInfoButtons}`;
+        officeBox.innerHTML = address;
+        officeMap.innerHTML = footerMapHTML;
+        const mondayHoursHTML = monday_hours ? `<tr><td class="day">Monday</td><td class="time"><span>${monday_hours}</span></td></tr>` : '';
+        const tuesdayHoursHTML = tuesday_hours ? `<tr><td class="day">Tuesday</td><td class="time"><span>${tuesday_hours}</span></td></tr>` : '';
+        const wednesdayHoursHTML = wednesday_hours ? `<tr><td class="day">Wednesday</td><td class="time"><span>${wednesday_hours}</span></td></tr>` : '';
+        const thursdayHoursHTML = thursday_hours ? `<tr><td class="day">Thursday</td><td class="time"><span>${thursday_hours}</span></td></tr>` : '';
+        const fridayHoursHTML = friday_hours ? `<tr><td class="day">Friday</td><td class="time"><span>${friday_hours}</span></td></tr>` : '';
+        const saturdayHoursHTML = saturday_hours ? `<tr><td class="day">Saturday</td><td class="time"><span>${saturday_hours}</span></td></tr>` : '';
+        const sundayHoursHTML = sunday_hours ? `<tr><td class="day">Sunday</td><td class="time"><span>${sunday_hours}</span></td></tr>` : '';
+        const hoursOffice = `<table>
+                              <tbody>
+                              ${mondayHoursHTML}
+                              ${tuesdayHoursHTML}
+                              ${wednesdayHoursHTML}
+                              ${thursdayHoursHTML}
+                              ${fridayHoursHTML}
+                              ${saturdayHoursHTML}
+                              ${sundayHoursHTML}
+                              </tbody>
+                            </table>`; // Hours Modal
+
+        officeHours.innerHTML = hoursOffice;
+      }
+    }
+  },
+
+  /**
+   * Mobile Menu
+   */
+  mobileMenu() {
+    const mobileButton = document.querySelector('.mobile-button');
+    const mobileMenuElement = document.querySelector('#mmenu');
+    const mobileChecker = document.querySelector('.mm-ocd');
+
+    if (mobileButton && mobileMenuElement) {
+      // Call mmenujs module
+      _customjs_module_loader_js__WEBPACK_IMPORTED_MODULE_0__["default"].mmenu().then(MmenuLight => {
+        if (!mobileChecker) {
+          const menu = new MmenuLight(mobileMenuElement);
+          menu.navigation();
+          const drawer = menu.offcanvas(); // Register event for listening to clicks
+
+          mobileButton.addEventListener('click', () => drawer.open());
+          /**
+           * Close Button
+           */
+
+          const closeButton = document.querySelector('.close__mobileMenu');
+          closeButton.addEventListener('click', () => drawer.close());
+          /**
+           *  Appending a click option for link tags
+           * with a hash(#) symbol at the beginning of the href
+           * */
+
+          const aHashTag = mobileMenuElement.querySelectorAll('a[href="#"]');
+          aHashTag.forEach(tag => {
+            tag.addEventListener('click', event => {
+              event.target.parentNode.click();
+              event.preventDefault();
+            });
+          });
+        }
+      });
+    }
+  }
+
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CwThemeFramework);
+
+/***/ }),
+
+/***/ "./src/js/custom/module-loader.js":
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/**
+ * This is just a Class to load all the JS Modules used across the project
+ */
+const CwLoadModules = {
+  async modals() {
+    const {
+      default: CWModals
+    } = await Promise.all(/* import() | modals */[__webpack_require__.e("vendors-node_modules_wicg-inert_dist_inert_esm_js"), __webpack_require__.e("modals")]).then(__webpack_require__.bind(__webpack_require__, "./src/js/libraries/cw-modals.js"));
+    return CWModals;
+  },
+
+  async AOSanimations() {
+    const {
+      default: AOS
+    } = await __webpack_require__.e(/* import() | AOS */ "AOS").then(__webpack_require__.t.bind(__webpack_require__, "./node_modules/aos/dist/aos.js", 23));
+    return AOS;
+  },
+
+  async mmenu() {
+    const {
+      default: MmenuLight
+    } = await __webpack_require__.e(/* import() | mmenujs */ "mmenujs").then(__webpack_require__.bind(__webpack_require__, "./node_modules/mmenu-light/src/mmenu-light.js"));
+    return MmenuLight;
+  },
+
+  async Collapse() {
+    const {
+      default: collapse
+    } = await Promise.all(/* import() | bootstrap-collapse */[__webpack_require__.e("vendors-node_modules_bootstrap_js_dist_base-component_js-node_modules_bootstrap_js_dist_dom_s-25bb7c"), __webpack_require__.e("bootstrap-collapse")]).then(__webpack_require__.t.bind(__webpack_require__, "./node_modules/bootstrap/js/dist/collapse.js", 23));
+    return collapse;
+  },
+
+  async Tabs() {
+    const {
+      default: tabs
+    } = await Promise.all(/* import() | bootstrap-tabs */[__webpack_require__.e("vendors-node_modules_bootstrap_js_dist_base-component_js-node_modules_bootstrap_js_dist_dom_s-25bb7c"), __webpack_require__.e("bootstrap-tabs")]).then(__webpack_require__.t.bind(__webpack_require__, "./node_modules/bootstrap/js/dist/tab.js", 23));
+    return tabs;
+  },
+
+  async Dropdown() {
+    const {
+      default: dropdown
+    } = await Promise.all(/* import() | bootstrap-dropdown */[__webpack_require__.e("vendors-node_modules_bootstrap_js_dist_base-component_js-node_modules_bootstrap_js_dist_dom_s-25bb7c"), __webpack_require__.e("bootstrap-dropdown")]).then(__webpack_require__.t.bind(__webpack_require__, "./node_modules/bootstrap/js/dist/dropdown.js", 23));
+    return dropdown;
+  },
+
+  async swiperSliders(carouselModule) {
+    const sliderCarousel = await __webpack_require__("./src/js/modules lazy recursive ^\\.\\/.*$")(`./${carouselModule}`);
+    return sliderCarousel;
+  },
+
+  async swiperSlidersVendor() {
+    const {
+      default: Swiper
+    } = await __webpack_require__.e(/* import() | swiper */ "swiper").then(__webpack_require__.bind(__webpack_require__, "./node_modules/swiper/swiper.esm.js"));
+    return Swiper;
+  },
+
+  async matchHeight() {
+    const {
+      default: MatchHeightjs
+    } = await Promise.resolve(/* import() */).then(__webpack_require__.bind(__webpack_require__, "./node_modules/js-match-height/lib/index.js"));
+    return MatchHeightjs;
+  }
+
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CwLoadModules);
+
+/***/ }),
+
+/***/ "./node_modules/js-match-height/lib/index.js":
+/***/ ((__unused_webpack_module, exports) => {
+
+"use strict";
+var _createClass=function(){function a(a,b){for(var c,d=0;d<b.length;d++)c=b[d],c.enumerable=c.enumerable||!1,c.configurable=!0,'value'in c&&(c.writable=!0),Object.defineProperty(a,c.key,c)}return function(b,c,d){return c&&a(b.prototype,c),d&&a(b,d),b}}();Object.defineProperty(exports, "__esModule", ({value:!0}));function _toConsumableArray(a){if(Array.isArray(a)){for(var b=0,c=Array(a.length);b<a.length;b++)c[b]=a[b];return c}return Array.from(a)}function _classCallCheck(a,b){if(!(a instanceof b))throw new TypeError('Cannot call a class as a function')}var MatchHeight=exports.MatchHeight=function(){function a(b,c){var d=this;_classCallCheck(this,a),this.defaults={timeout:250},this.options=Object.assign(this.defaults,c),this.$els=document.querySelectorAll(b),this.$elsArray=Array.prototype.slice.call(this.$els),this.getAndSet(this.$elsArray),this.debounceHeight=this.debounce(function(){d.getAndSet(d.$elsArray)},this.options.timeout),window.addEventListener('resize',function(){d.debounceHeight()})}return _createClass(a,[{key:'getAndSet',value:function d(a){var b=Math.max;a.forEach(function(a){return a.removeAttribute('style')});var c=b.apply(Math,_toConsumableArray(a.map(function(a){return a.clientHeight})));a.forEach(function(a){Object.assign(a.style,{height:c+'px',verticalAlign:'top'})})}},{key:'debounce',value:function g(a,b,c){var d=this,e=arguments,f=void 0;return function(){var g=d,h=e,i=c&&!f;clearTimeout(f),f=setTimeout(function b(){f=null,c||a.apply(g,h)},b),i&&a.apply(g,h)}}}]),a}();
+
+/***/ }),
+
+/***/ "./src/scss/common/theme.scss":
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./src/js/modules lazy recursive ^\\.\\/.*$":
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var map = {
+	"./awards-carousel": [
+		"./src/js/modules/awards-carousel.js",
+		"swiper",
+		"awards-carousel"
+	],
+	"./awards-carousel-sidebar": [
+		"./src/js/modules/awards-carousel-sidebar.js",
+		"swiper",
+		"awards-carousel-sidebar"
+	],
+	"./awards-carousel-sidebar.js": [
+		"./src/js/modules/awards-carousel-sidebar.js",
+		"swiper",
+		"awards-carousel-sidebar"
+	],
+	"./awards-carousel.js": [
+		"./src/js/modules/awards-carousel.js",
+		"swiper",
+		"awards-carousel"
+	],
+	"./awards-home-carousel": [
+		"./src/js/modules/awards-home-carousel.js",
+		"swiper",
+		"awards-home-carousel"
+	],
+	"./awards-home-carousel.js": [
+		"./src/js/modules/awards-home-carousel.js",
+		"swiper",
+		"awards-home-carousel"
+	],
+	"./results-carousel": [
+		"./src/js/modules/results-carousel.js",
+		"swiper",
+		"results-carousel"
+	],
+	"./results-carousel-home": [
+		"./src/js/modules/results-carousel-home.js",
+		"swiper",
+		"results-carousel-home"
+	],
+	"./results-carousel-home.js": [
+		"./src/js/modules/results-carousel-home.js",
+		"swiper",
+		"results-carousel-home"
+	],
+	"./results-carousel.js": [
+		"./src/js/modules/results-carousel.js",
+		"swiper",
+		"results-carousel"
+	],
+	"./results-slider-sidebar": [
+		"./src/js/modules/results-slider-sidebar.js",
+		"swiper",
+		"results-slider-sidebar"
+	],
+	"./results-slider-sidebar.js": [
+		"./src/js/modules/results-slider-sidebar.js",
+		"swiper",
+		"results-slider-sidebar"
+	],
+	"./table-of-contents": [
+		"./src/js/modules/table-of-contents.js",
+		"table-of-contents"
+	],
+	"./table-of-contents.js": [
+		"./src/js/modules/table-of-contents.js",
+		"table-of-contents"
+	],
+	"./team-carousel": [
+		"./src/js/modules/team-carousel.js",
+		"swiper",
+		"team-carousel"
+	],
+	"./team-carousel.js": [
+		"./src/js/modules/team-carousel.js",
+		"swiper",
+		"team-carousel"
+	],
+	"./team-sidebar-widget": [
+		"./src/js/modules/team-sidebar-widget.js",
+		"swiper",
+		"team-sidebar-widget"
+	],
+	"./team-sidebar-widget.js": [
+		"./src/js/modules/team-sidebar-widget.js",
+		"swiper",
+		"team-sidebar-widget"
+	],
+	"./testimonials-carousel": [
+		"./src/js/modules/testimonials-carousel.js",
+		"swiper",
+		"testimonials-carousel"
+	],
+	"./testimonials-carousel-sidebar": [
+		"./src/js/modules/testimonials-carousel-sidebar.js",
+		"swiper",
+		"testimonials-carousel-sidebar"
+	],
+	"./testimonials-carousel-sidebar.js": [
+		"./src/js/modules/testimonials-carousel-sidebar.js",
+		"swiper",
+		"testimonials-carousel-sidebar"
+	],
+	"./testimonials-carousel.js": [
+		"./src/js/modules/testimonials-carousel.js",
+		"swiper",
+		"testimonials-carousel"
+	],
+	"./videos-carousel": [
+		"./src/js/modules/videos-carousel.js",
+		"swiper",
+		"videos-carousel"
+	],
+	"./videos-carousel.js": [
+		"./src/js/modules/videos-carousel.js",
+		"swiper",
+		"videos-carousel"
+	]
+};
+function webpackAsyncContext(req) {
+	if(!__webpack_require__.o(map, req)) {
+		return Promise.resolve().then(() => {
+			var e = new Error("Cannot find module '" + req + "'");
+			e.code = 'MODULE_NOT_FOUND';
+			throw e;
+		});
+	}
+
+	var ids = map[req], id = ids[0];
+	return Promise.all(ids.slice(1).map(__webpack_require__.e)).then(() => {
+		return __webpack_require__(id);
+	});
+}
+webpackAsyncContext.keys = () => (Object.keys(map));
+webpackAsyncContext.id = "./src/js/modules lazy recursive ^\\.\\/.*$";
+module.exports = webpackAsyncContext;
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/chunk loaded */
+/******/ 	(() => {
+/******/ 		var deferred = [];
+/******/ 		__webpack_require__.O = (result, chunkIds, fn, priority) => {
+/******/ 			if(chunkIds) {
+/******/ 				priority = priority || 0;
+/******/ 				for(var i = deferred.length; i > 0 && deferred[i - 1][2] > priority; i--) deferred[i] = deferred[i - 1];
+/******/ 				deferred[i] = [chunkIds, fn, priority];
+/******/ 				return;
+/******/ 			}
+/******/ 			var notFulfilled = Infinity;
+/******/ 			for (var i = 0; i < deferred.length; i++) {
+/******/ 				var [chunkIds, fn, priority] = deferred[i];
+/******/ 				var fulfilled = true;
+/******/ 				for (var j = 0; j < chunkIds.length; j++) {
+/******/ 					if ((priority & 1 === 0 || notFulfilled >= priority) && Object.keys(__webpack_require__.O).every((key) => (__webpack_require__.O[key](chunkIds[j])))) {
+/******/ 						chunkIds.splice(j--, 1);
+/******/ 					} else {
+/******/ 						fulfilled = false;
+/******/ 						if(priority < notFulfilled) notFulfilled = priority;
+/******/ 					}
+/******/ 				}
+/******/ 				if(fulfilled) {
+/******/ 					deferred.splice(i--, 1)
+/******/ 					var r = fn();
+/******/ 					if (r !== undefined) result = r;
+/******/ 				}
+/******/ 			}
+/******/ 			return result;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/chunk prefetch function */
+/******/ 	(() => {
+/******/ 		__webpack_require__.F = {};
+/******/ 		__webpack_require__.E = (chunkId) => {
+/******/ 			Object.keys(__webpack_require__.F).map((key) => {
+/******/ 				__webpack_require__.F[key](chunkId);
+/******/ 			});
+/******/ 		}
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/create fake namespace object */
+/******/ 	(() => {
+/******/ 		var getProto = Object.getPrototypeOf ? (obj) => (Object.getPrototypeOf(obj)) : (obj) => (obj.__proto__);
+/******/ 		var leafPrototypes;
+/******/ 		// create a fake namespace object
+/******/ 		// mode & 1: value is a module id, require it
+/******/ 		// mode & 2: merge all properties of value into the ns
+/******/ 		// mode & 4: return value when already ns object
+/******/ 		// mode & 16: return value when it's Promise-like
+/******/ 		// mode & 8|1: behave like require
+/******/ 		__webpack_require__.t = function(value, mode) {
+/******/ 			if(mode & 1) value = this(value);
+/******/ 			if(mode & 8) return value;
+/******/ 			if(typeof value === 'object' && value) {
+/******/ 				if((mode & 4) && value.__esModule) return value;
+/******/ 				if((mode & 16) && typeof value.then === 'function') return value;
+/******/ 			}
+/******/ 			var ns = Object.create(null);
+/******/ 			__webpack_require__.r(ns);
+/******/ 			var def = {};
+/******/ 			leafPrototypes = leafPrototypes || [null, getProto({}), getProto([]), getProto(getProto)];
+/******/ 			for(var current = mode & 2 && value; typeof current == 'object' && !~leafPrototypes.indexOf(current); current = getProto(current)) {
+/******/ 				Object.getOwnPropertyNames(current).forEach((key) => (def[key] = () => (value[key])));
+/******/ 			}
+/******/ 			def['default'] = () => (value);
+/******/ 			__webpack_require__.d(ns, def);
+/******/ 			return ns;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/ensure chunk */
+/******/ 	(() => {
+/******/ 		__webpack_require__.f = {};
+/******/ 		// This file contains only the entry chunk.
+/******/ 		// The chunk loading function for additional chunks
+/******/ 		__webpack_require__.e = (chunkId) => {
+/******/ 			return Promise.all(Object.keys(__webpack_require__.f).reduce((promises, key) => {
+/******/ 				__webpack_require__.f[key](chunkId, promises);
+/******/ 				return promises;
+/******/ 			}, []));
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/get javascript chunk filename */
+/******/ 	(() => {
+/******/ 		// This function allow to reference async chunks
+/******/ 		__webpack_require__.u = (chunkId) => {
+/******/ 			// return url for filenames based on template
+/******/ 			return "js/" + chunkId + ".bundle.js";
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/get mini-css chunk filename */
+/******/ 	(() => {
+/******/ 		// This function allow to reference async chunks
+/******/ 		__webpack_require__.miniCssF = (chunkId) => {
+/******/ 			// return url for filenames based on template
+/******/ 			return undefined;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/load script */
+/******/ 	(() => {
+/******/ 		var inProgress = {};
+/******/ 		var dataWebpackPrefix = "horizon-mercury:";
+/******/ 		// loadScript function to load a script via script tag
+/******/ 		__webpack_require__.l = (url, done, key, chunkId) => {
+/******/ 			if(inProgress[url]) { inProgress[url].push(done); return; }
+/******/ 			var script, needAttach;
+/******/ 			if(key !== undefined) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				for(var i = 0; i < scripts.length; i++) {
+/******/ 					var s = scripts[i];
+/******/ 					if(s.getAttribute("src") == url || s.getAttribute("data-webpack") == dataWebpackPrefix + key) { script = s; break; }
+/******/ 				}
+/******/ 			}
+/******/ 			if(!script) {
+/******/ 				needAttach = true;
+/******/ 				script = document.createElement('script');
+/******/ 		
+/******/ 				script.charset = 'utf-8';
+/******/ 				script.timeout = 120;
+/******/ 				if (__webpack_require__.nc) {
+/******/ 					script.setAttribute("nonce", __webpack_require__.nc);
+/******/ 				}
+/******/ 				script.setAttribute("data-webpack", dataWebpackPrefix + key);
+/******/ 				script.src = url;
+/******/ 			}
+/******/ 			inProgress[url] = [done];
+/******/ 			var onScriptComplete = (prev, event) => {
+/******/ 				// avoid mem leaks in IE.
+/******/ 				script.onerror = script.onload = null;
+/******/ 				clearTimeout(timeout);
+/******/ 				var doneFns = inProgress[url];
+/******/ 				delete inProgress[url];
+/******/ 				script.parentNode && script.parentNode.removeChild(script);
+/******/ 				doneFns && doneFns.forEach((fn) => (fn(event)));
+/******/ 				if(prev) return prev(event);
+/******/ 			}
+/******/ 			;
+/******/ 			var timeout = setTimeout(onScriptComplete.bind(null, undefined, { type: 'timeout', target: script }), 120000);
+/******/ 			script.onerror = onScriptComplete.bind(null, script.onerror);
+/******/ 			script.onload = onScriptComplete.bind(null, script.onload);
+/******/ 			needAttach && document.head.appendChild(script);
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		__webpack_require__.p = "/wp-content/themes/horizon-apollo/dist/";
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		// no baseURI
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"theme": 0
+/******/ 		};
+/******/ 		
+/******/ 		__webpack_require__.f.j = (chunkId, promises) => {
+/******/ 				// JSONP chunk loading for javascript
+/******/ 				var installedChunkData = __webpack_require__.o(installedChunks, chunkId) ? installedChunks[chunkId] : undefined;
+/******/ 				if(installedChunkData !== 0) { // 0 means "already installed".
+/******/ 		
+/******/ 					// a Promise means "currently loading".
+/******/ 					if(installedChunkData) {
+/******/ 						promises.push(installedChunkData[2]);
+/******/ 					} else {
+/******/ 						if(true) { // all chunks have JS
+/******/ 							// setup Promise in chunk cache
+/******/ 							var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
+/******/ 							promises.push(installedChunkData[2] = promise);
+/******/ 		
+/******/ 							// start chunk loading
+/******/ 							var url = __webpack_require__.p + __webpack_require__.u(chunkId);
+/******/ 							// create error before stack unwound to get useful stacktrace later
+/******/ 							var error = new Error();
+/******/ 							var loadingEnded = (event) => {
+/******/ 								if(__webpack_require__.o(installedChunks, chunkId)) {
+/******/ 									installedChunkData = installedChunks[chunkId];
+/******/ 									if(installedChunkData !== 0) installedChunks[chunkId] = undefined;
+/******/ 									if(installedChunkData) {
+/******/ 										var errorType = event && (event.type === 'load' ? 'missing' : event.type);
+/******/ 										var realSrc = event && event.target && event.target.src;
+/******/ 										error.message = 'Loading chunk ' + chunkId + ' failed.\n(' + errorType + ': ' + realSrc + ')';
+/******/ 										error.name = 'ChunkLoadError';
+/******/ 										error.type = errorType;
+/******/ 										error.request = realSrc;
+/******/ 										installedChunkData[1](error);
+/******/ 									}
+/******/ 								}
+/******/ 							};
+/******/ 							__webpack_require__.l(url, loadingEnded, "chunk-" + chunkId, chunkId);
+/******/ 						} else installedChunks[chunkId] = 0;
+/******/ 					}
+/******/ 				}
+/******/ 		};
+/******/ 		
+/******/ 		__webpack_require__.F.j = (chunkId) => {
+/******/ 			if((!__webpack_require__.o(installedChunks, chunkId) || installedChunks[chunkId] === undefined) && true) {
+/******/ 				installedChunks[chunkId] = null;
+/******/ 				var link = document.createElement('link');
+/******/ 		
+/******/ 				if (__webpack_require__.nc) {
+/******/ 					link.setAttribute("nonce", __webpack_require__.nc);
+/******/ 				}
+/******/ 				link.rel = "prefetch";
+/******/ 				link.as = "script";
+/******/ 				link.href = __webpack_require__.p + __webpack_require__.u(chunkId);
+/******/ 				document.head.appendChild(link);
+/******/ 			}
+/******/ 		};
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		__webpack_require__.O.j = (chunkId) => (installedChunks[chunkId] === 0);
+/******/ 		
+/******/ 		// install a JSONP callback for chunk loading
+/******/ 		var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 			var [chunkIds, moreModules, runtime] = data;
+/******/ 			// add "moreModules" to the modules object,
+/******/ 			// then flag all "chunkIds" as loaded and fire callback
+/******/ 			var moduleId, chunkId, i = 0;
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
+/******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
+/******/ 			}
+/******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 			for(;i < chunkIds.length; i++) {
+/******/ 				chunkId = chunkIds[i];
+/******/ 				if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 					installedChunks[chunkId][0]();
+/******/ 				}
+/******/ 				installedChunks[chunkId] = 0;
+/******/ 			}
+/******/ 			return __webpack_require__.O(result);
+/******/ 		}
+/******/ 		
+/******/ 		var chunkLoadingGlobal = self["webpackChunkhorizon_mercury"] = self["webpackChunkhorizon_mercury"] || [];
+/******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/startup prefetch */
+/******/ 	(() => {
+/******/ 		__webpack_require__.O(0, ["theme"], () => {
+/******/ 			["vendors-node_modules_wicg-inert_dist_inert_esm_js","modals","AOS","mmenujs","vendors-node_modules_bootstrap_js_dist_base-component_js-node_modules_bootstrap_js_dist_dom_s-25bb7c","bootstrap-collapse","bootstrap-tabs","bootstrap-dropdown","swiper"].map(__webpack_require__.E);
+/******/ 		}, 5);
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+(() => {
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _sass_common_theme_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("./src/scss/common/theme.scss");
+/* harmony import */ var _customjs_module_loader_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("./src/js/custom/module-loader.js");
+/* harmony import */ var _customjs_generalFns_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("./src/js/custom/generalFns.js");
+/* harmony import */ var js_match_height__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("./node_modules/js-match-height/lib/index.js");
+
+
+
+
+/**
+ * Running mixed functions across the theme
+ */
+
+_customjs_generalFns_js__WEBPACK_IMPORTED_MODULE_2__["default"].generalFns();
+/**
+ * Bootstrap Tabs
+ */
+
+const tabs = document.querySelector('[role="tablist"]');
+if (tabs) _customjs_module_loader_js__WEBPACK_IMPORTED_MODULE_1__["default"].Tabs();
+/**
+ * Dropdown
+ */
+
+const dropdown = document.querySelector('.dropdown-toggle');
+if (dropdown) _customjs_module_loader_js__WEBPACK_IMPORTED_MODULE_1__["default"].Dropdown();
+/**
+ * Accordions
+ */
+
+const accordion = document.querySelector('.accordion');
+if (accordion) _customjs_module_loader_js__WEBPACK_IMPORTED_MODULE_1__["default"].Collapse();
+/**
+ * Service Worker
+ */
+// check if service worker is available
+
+if ('serviceWorkerNO' in navigator) {
+  document.addEventListener('DOMContentLoaded', () => {
+    // Registering Service Worker
+    navigator.serviceWorker // eslint-disable-next-line no-undef
+    .register(`${ThemeURLS.childThemeURL}/sw.php`, {
+      scope: '/'
+    }).then(reg => console.log(reg.scope)).catch(error => console.log(error.message));
+  });
+}
+/**
+ * Loading Mobile Menu
+ */
+
+
+function matchMobile() {
+  const mobileMediaQuery = window.matchMedia('(max-width: 1199px)');
+  return mobileMediaQuery.matches;
+}
+
+matchMobile() ? _customjs_generalFns_js__WEBPACK_IMPORTED_MODULE_2__["default"].mobileMenu() : '';
+window.addEventListener('resize', () => {
+  matchMobile() ? _customjs_generalFns_js__WEBPACK_IMPORTED_MODULE_2__["default"].mobileMenu() : '';
+});
+/**
+ * Loading Modals in the Page
+ * We will be pulling all the buttons with the data-cw-target
+ * Attribute in order to initialize all the modals.
+ */
+// Checking for all out buttons
+
+const modals = document.querySelectorAll('[data-cw-target]');
+
+if (modals.length) {
+  const modalInstances = [];
+  _customjs_module_loader_js__WEBPACK_IMPORTED_MODULE_1__["default"].modals().then(CwModals => {
+    modals.forEach((modalBtn, index) => {
+      modalInstances[index] = new CwModals('.cw-modal');
+      modalInstances[index].init();
+    });
+  });
+} // <h3> replacements on the [qa] plugin
+
+
+const faqsTitle = document.querySelectorAll('.qa-faq-title');
+
+if (faqsTitle.length) {
+  faqsTitle.forEach(title => {
+    title.outerHTML = title.outerHTML.replace("h3", "div");
+  });
+} // fix for the [faq] plugin
+
+
+document.addEventListener('click', e => {
+  if (e.target.classList.contains('qa-faq-anchor')) {
+    const anchorLink = e.target;
+    e.preventDefault();
+
+    if (anchorLink.classList.contains('active')) {
+      anchorLink.classList.remove('active');
+      anchorLink.parentNode.classList.remove('open');
+    } else {
+      const currentActiveElement = anchorLink.closest('.qa-category').querySelector('.active');
+      if (currentActiveElement) currentActiveElement.classList.remove('active');
+      const faqAnchors = document.querySelectorAll('.qa-faq-anchor');
+      faqAnchors.forEach(faqAnchor => {
+        faqAnchor.classList.remove('active');
+        faqAnchor.parentNode.classList.remove('open');
+      });
+      anchorLink.classList.add('active');
+      anchorLink.parentNode.classList.add('open');
+    }
+  }
+});
+/**
+ * Loading Swiper JS
+ * https://swiperjs.com/
+ */
+
+const carouselModules = {
+  'results-slider': 'results-carousel',
+  'results-slider-home': 'results-carousel-home',
+  'results-slider__sidebar': 'results-slider-sidebar',
+  'awards-wrap': 'awards-carousel',
+  'awards-home-slider': 'awards-home-carousel',
+  'awards-wrap-sidebar': 'awards-carousel-sidebar',
+  'testimonials-section-slider': 'testimonials-carousel',
+  'testimonials-section-slider-sidebar': 'testimonials-carousel-sidebar',
+  'grid-attorney': 'team-carousel',
+  'grid-videos': 'videos-carousel',
+  'our-team': 'team-sidebar-widget'
+}; // eslint-disable-next-line no-restricted-syntax
+
+for (const [key, value] of Object.entries(carouselModules)) {
+  const name = document.getElementById(key);
+
+  if (name) {
+    _customjs_module_loader_js__WEBPACK_IMPORTED_MODULE_1__["default"].swiperSliders(value).then(module => {
+      module.default();
+    });
+  }
+}
+/**
+ * Loading MatchHeight
+ * Create new instance of MatchHeight [new MatchHeight()]
+ * for elements that need to have the same height
+ * https://www.npmjs.com/package/js-match-height
+ */
+
+
+const testimonialItem = new js_match_height__WEBPACK_IMPORTED_MODULE_3__.MatchHeight('.testimonials-section__item');
+const whychooseusItem = new js_match_height__WEBPACK_IMPORTED_MODULE_3__.MatchHeight('.why-choose-us__item');
+/**
+ * Smooth Scroll
+ * add class '.scroll' to new elements
+ * class '.scroll' already added to footer back to top and TOC dynamic link elements
+ */
+// smooth scroll
+
+document.addEventListener('click', event => {
+  if (!event.target.closest('.scroll')) return;
+  const hashValue = event.target.closest('.scroll').getAttribute('href');
+  const target = document.querySelector(hashValue);
+  target.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'
+  });
+  history.pushState(null, null, hashValue);
+  event.preventDefault();
+}, false);
+})();
+
+__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
+/******/ })()
+;
+//# sourceMappingURL=theme.bundle.js.map

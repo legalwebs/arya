@@ -1,0 +1,451 @@
+/**
+* Base Colors
+*/
+/**************************
+  Media Queries
+***************************/
+/*************************
+  Fonts
+**************************/
+/*************************
+  Button colours
+**************************/
+/*************************
+  Location page colours
+**************************/
+/*************************
+  Form colours
+**************************/
+/*************************
+  Sidebar variables
+**************************/
+/*************************
+  404 button background
+**************************/
+/*************************
+  Results Partial
+**************************/
+/*************************
+  Swiper
+**************************/
+/*************************
+  Footer Top
+**************************/
+/* Additional Mixins */
+.uppercase-title {
+  font-family: var(--secondary-font), sans-serif;
+  color: #2b2b2b;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 27px;
+  letter-spacing: 0.15rem;
+  text-align: center;
+}
+
+.main-wrapper {
+  overflow: hidden;
+}
+
+.page-template-contact .main-wrapper {
+  border-top: none;
+}
+
+@media screen and (min-width: 1200px) {
+  .main-content .container .row > .entry-content.col-xl-8,
+.main-content .container .row > .content.col-xl-8 {
+    padding-right: 135px;
+  }
+}
+[v-cloak] > * {
+  display: none;
+}
+
+#loader-div {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.3);
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+#loader-div .lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 77px;
+  height: 77px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+}
+
+#loader-div .lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  margin: 6px;
+  border: 7px solid #4164f2;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #4164f2 transparent transparent transparent;
+}
+
+#loader-div .lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+#loader-div .lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+#loader-div .lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.arrow-link {
+  color: #eb5b13;
+  font-size: 16px;
+  font-weight: 600;
+  background-image: url("../images/arrows/arrow-right.svg");
+  background-repeat: no-repeat;
+  background-size: 18px 8px;
+  padding-right: 22px;
+  background-position: right center;
+}
+
+.arrow-link__alt {
+  color: #fff;
+  background-image: url("../images/arrows/arrow-alt-right.svg");
+}
+
+.diagonal-bkg {
+  position: relative;
+}
+
+@media screen and (min-width: 1200px) {
+  .diagonal-bkg .container {
+    position: unset;
+  }
+}
+.diagonal-bkg__wrapper {
+  position: relative;
+}
+
+@media screen and (min-width: 1200px) {
+  .diagonal-bkg__wrapper {
+    position: unset;
+  }
+}
+.diagonal-bkg__wrapper:before {
+  left: 0;
+  background-color: #efeeec;
+  width: 100%;
+  height: 100%;
+  content: "";
+  position: absolute;
+}
+
+@media screen and (min-width: 1200px) {
+  .diagonal-bkg__wrapper:before {
+    top: 0;
+    right: 0;
+    left: unset;
+    z-index: 2;
+    width: 56%;
+    clip-path: polygon(210px 0%, 100% 0, 100% 100%, 0% 100%);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .diagonal-bkg__wrapper:before {
+    clip-path: polygon(180px 0%, 100% 0, 100% 100%, 0% 100%);
+    width: 54%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .diagonal-bkg__wrapper:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: calc(51% - 75px);
+    z-index: 5;
+    height: 100%;
+    width: 8px;
+    background-color: #fff;
+    transform: skewX(-14.5deg);
+    opacity: 0.43;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .diagonal-bkg__wrapper:after {
+    transform: skewX(-16.4deg);
+  }
+}
+.small-font-content p {
+  font-family: var(--third-font), sans-serif;
+  font-size: 1rem;
+  line-height: 2rem;
+  color: #242424;
+  margin-bottom: 27px;
+}
+
+.awards-section-sidebar {
+  background-color: #f5f5f5;
+  padding: 4rem 2rem 3rem;
+}
+
+@media screen and (min-width: 1400px) {
+  .awards-section-sidebar {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+.results-section-sidebar {
+  background-color: #1F4698;
+  padding: 4rem 2rem 3rem;
+}
+
+@media screen and (min-width: 1400px) {
+  .results-section-sidebar {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+.results-section-sidebar__wrapper {
+  padding: 1rem 0 2rem;
+}
+
+.results-section-sidebar__wrapper .amount {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.results-section-sidebar__wrapper .pa-category {
+  font-size: 18px;
+  display: block;
+  padding-top: 0.3rem;
+}
+
+.contact-content {
+  padding-top: 32px;
+}
+
+.contact-content .intro-content {
+  margin: 0 auto 50px;
+  max-width: 990px;
+}
+
+.contact-content .offices-form-holder .office-info-wrapper {
+  padding: 25px 15px;
+  height: 100%;
+  background-color: var(--color-secondary);
+}
+
+@media screen and (min-width: 768px) {
+  .contact-content .offices-form-holder .office-info-wrapper {
+    padding: 41px 34px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .contact-content .offices-form-holder .office-info-wrapper {
+    margin-right: -24px;
+  }
+}
+.contact-content .offices-form-holder .office-holder {
+  max-width: 619px;
+}
+
+.contact-content .offices-form-holder .office-holder .office-heading {
+  margin-bottom: 18px;
+  color: var(--text-color);
+  font-family: var(--secondary-font), sans-serif;
+  font-size: 30px;
+  line-height: 38px;
+}
+
+.contact-content .offices-form-holder .office-holder .select-office-contact {
+  position: relative;
+  padding: 15px 60px 15px 15px;
+  margin-bottom: 27px;
+  width: 100%;
+  height: 50px;
+  background: url(../images/select-arrow-down.jpg) #fff no-repeat 100%;
+  appearance: none;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.67px;
+  text-transform: uppercase;
+  color: var(--text-color);
+  border: none;
+}
+
+@media screen and (min-width: 768px) {
+  .contact-content .offices-form-holder .office-map-contact {
+    width: 100%;
+    height: 370px;
+    border: 5px solid #fff;
+  }
+}
+.contact-content .offices-form-holder .office-map-contact img {
+  object-fit: none;
+}
+
+@media screen and (min-width: 768px) {
+  .contact-content .offices-form-holder .office-map-contact img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+@media (max-width: 767px) {
+  .contact-content .offices-form-holder .office-map-contact img {
+    border: 3px solid #fff;
+  }
+}
+.contact-content .offices-form-holder .office-info-contact {
+  margin-top: 38px;
+  color: var(--text-color);
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.contact-content .offices-form-holder .office-info-contact strong {
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+.contact-content .offices-form-holder .office-info-contact address {
+  margin-bottom: 0;
+}
+
+.contact-content .offices-form-holder .office-info-contact a {
+  color: var(--text-color);
+}
+
+.contact-content .offices-form-holder .office-info-contact .office-info__buttons {
+  margin-top: 16px;
+}
+
+.contact-content .offices-form-holder .office-info-contact .office-info__buttons a {
+  margin-right: 39px;
+  color: var(--accent-color);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.contact-content .offices-form-holder .office-info-contact .office-info__buttons button {
+  padding: 0;
+  color: var(--accent-color);
+  font-weight: 700;
+  text-decoration: underline;
+  background: none;
+  border: none;
+}
+
+.contact-content .contact-sidebar {
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+@media screen and (min-width: 768px) {
+  .contact-content .contact-sidebar {
+    margin-top: 85px;
+  }
+}
+@media (max-width: 1399px) {
+  .contact-content .contact-sidebar .col-item {
+    margin-bottom: 30px;
+  }
+}
+.contact-content .contact-sidebar .sidebar-widget {
+  padding: 25px 15px;
+  height: 100%;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(141, 151, 158, 0.4);
+}
+
+@media screen and (min-width: 768px) {
+  .contact-content .contact-sidebar .sidebar-widget {
+    padding: 38px 27px 53px;
+  }
+}
+@media (max-width: 991px) {
+  .contact-content .contact-sidebar .sidebar-widget {
+    margin: auto;
+    max-width: 450px;
+  }
+}
+.contact-content .contact-sidebar .sidebar-widget .sidebar-title {
+  margin-bottom: 35px;
+  font-family: var(--main-font), sans-serif;
+  font-size: 26px;
+  line-height: 36px;
+  text-transform: capitalize;
+}
+
+@media screen and (min-width: 768px) {
+  .contact-content .contact-sidebar .sidebar-widget .sidebar-title {
+    font-size: 32px;
+    line-height: 43px;
+  }
+}
+.contact-content .contact-sidebar .sidebar-widget p {
+  font-size: 20px;
+  line-height: 36px;
+}
+
+.contact-content .contact-sidebar .sidebar-widget.sidebar-follow ul.social-icon-list li a {
+  background-color: var(--color-primary);
+}
+
+.contact-content .contact-sidebar .sidebar-widget.sidebar-follow .review-holder {
+  padding-top: 34px;
+  margin: 33px auto 0;
+  max-width: 344px;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.contact-content .contact-sidebar .sidebar-widget.sidebar-follow .review-holder .icon-holder {
+  margin-bottom: 17px;
+}
+
+.contact-content .contact-sidebar .sidebar-widget.sidebar-follow .review-holder .icon-holder svg * {
+  fill: var(--accent-color);
+}
+
+.contact-content .contact-sidebar .sidebar-widget.sidebar-follow .review-holder .btn-link {
+  color: var(--accent-color);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 23px;
+}
+
+.contact-content .contact-sidebar .sidebar-widget.sidebar-privacy .sidebar-title {
+  margin-bottom: 35px;
+}
+
+@media screen and (min-width: 1400px) {
+  .contact-content .contact-sidebar .sidebar-widget.sidebar-privacy .sidebar-title {
+    margin-bottom: 80px;
+  }
+}
+
+/*# sourceMappingURL=contact.css.map*/
