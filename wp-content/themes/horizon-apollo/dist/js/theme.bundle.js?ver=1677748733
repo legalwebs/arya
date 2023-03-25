@@ -734,7 +734,7 @@ module.exports = webpackAsyncContext;
 /******/ 	
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	(() => {
-/******/ 		__webpack_require__.p = "/wp-content/themes/horizon-apollo/dist/";
+/******/ 		__webpack_require__.p = "/wp-content/themes/horizon-arya/dist/";
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
